@@ -9,6 +9,7 @@ ajouter des fichier:
 	
 	git commit -m "<message>"
 	
+	(pas obligatoire)
 	git remote add <fichier> https://github.com/peterscf/ProjetC.git
 	
-	git push -u origin master
+	git push
