@@ -1,3 +1,14 @@
 tuto git
 
+recuperation du dossier
 
+git pull 
+
+ajouter des fichier:
+	git add <fichier.ext>
+	
+	git commit -m "<message>"
+	
+	git remote add <fichier> https://github.com/peterscf/ProjetC.git
+	
+	git push -u origin master
