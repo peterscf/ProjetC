@@ -6,27 +6,32 @@
 /*
 //////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////*/
+#include<iostream>
+#include<string>
+#include<sstream>
+#include <stdlib.h>
+using namespace std;
 
+int main (int argc, char *argv[]){
 
-
-int main (int argc, char *argv[])
+	string mkdir ="mkdir ";
+	char *cmd;
 
 //test présence nom de la library
-if (argc==0){
-	cout	<<"Error: too few arguments !" << endl
+if (argc==1){
+	cout<<"Error: too few arguments !" << endl
+		<<"example:\t\"vhdllib <name of physical library>\""
+		<< endl;
+}
+else if(argc>2){
+	cout<<"Error: too much arguments !" << endl
 		<<"example:\t\"vhdllib <name of physical library>"
 		<< endl;
 }
-else if(argc<1){
-	cout 	<<"Error: too much argument !" << endl
-		<<"example:\t\"vhdllib <name of physical library>"
-		<< endl;
-}
-else {
-	if (/*test path ok ?*/){
-	
-	}
+else { //ajouter le path
+	mkdir=mkdir + argv[1];
+	//cout<<mkdir<<endl;
+	system((char*)mkdir.c_str()); 
 }
 
-return 0;
 }
