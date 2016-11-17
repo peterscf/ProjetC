@@ -1,1 +1,3 @@
-je peux lire un ficher texte !!!
+je	peux lire un ficher
+texte avec:des parthèses(ouvertes fermées)des crochets[ouverts fermées]et
+des points;virgules
