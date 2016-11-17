@@ -10,15 +10,14 @@
 /*
 //////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////*/
-#ifdef _LEXEM_H
-#define LEXEM_H
+#ifndef LEXEM_H_
+#define LEXEM_H_
 
 #include <string>
 #include <sstream>
 #include<iostream>
-
-
-class Lexem {
+using namespace std;
+class lexem{
 private:
 // declaration des attributs
 	string my_type;
@@ -31,7 +30,7 @@ private:
 ////////////////////////////////////////////////////////////////////////////////////
 public:
 //Conctructeur
-	Lexem(string nom, string type="unknow", int l_pos=0, int c_pos=0){
+	lexem(string nom, string type="unknow", int l_pos=0, int c_pos=0){
 		my_nom=nom;
 		my_type=type;
 		my_l_pos=l_pos;
@@ -39,7 +38,7 @@ public:
 	
 	}
 //Destructeur
-	~Lexem(){};
+	~lexem(){};
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 //Accesseurs et modifieurs
@@ -61,7 +60,7 @@ public:
 	void set_name(string nom){
 		my_nom=nom;
 	}
-	void set_name(string type){
+	void set_type(string type){
 		my_type=type;
 	}
 	void set_pos(int l_pos, int c_pos){
