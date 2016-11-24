@@ -3,8 +3,8 @@ CFLAGS= -WALL -g
 
 all : test
 
-test : test.o alpha.cc alpha.o
-	g++ -o test $^ $(LDFLAGS)
+test : test.o
+	g++ -o lexeur $^ $(LDFLAGS)
 
 
 %.o:%.cc
