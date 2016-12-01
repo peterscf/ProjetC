@@ -1,86 +1,51 @@
-#ifndef DICTIONNAIRE_H_
-#define DICTIONNAIRE_H_
+#include"Dictionnaire.h"
 
-#include<iostream>
-#include<sstream>
-#include<string>
-#include"lexem.h"
-#include <fstream>
- 
-using namespace std;
-
- 
-        if(fichier)  // si l'ouverture a fonctionné
-        {
-                string contenu;  // déclaration d'une chaîne qui contiendra la ligne lue
-                getline(fichier, contenu);  // on met dans "contenu" la ligne
-                cout << contenu;  // on affiche la ligne
- 
-                fichier.close();
-        }
-        else
-                cerr << "Impossible d'ouvrir le fichier !" << endl;
-
-
-
-class Dictionnaire
-{
-private:
-  string my_file;
-
-  vector < string > my_dico;	//vector qui contient les lexems partivulier du VHDL contenu dans le fichier <name>.dico
-  vector < string >::iterator itr;
-
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-public:
-//Conctructeur
-  Dictionnaire (string file = "unknow"){
+Dictionnaire::Dictionnaire(string file)
+  {
     my_file = file;
-	
-	ifstream fichier(my_file, ios::in);  // on ouvre en lecture
-	if(fichier){
-    	string line;
-        while(getline(fichier, line)){  // tant que l'on peut mettre la ligne dans "contenu"
-        	//operation sur line
-        	if (line.find("##")<=line.lenght())
-        		//ligne comentaire	
-        	}
-        	else{
-        		//push dans vector line
-        		my_dico.push_back(line);
-        	}
-        }
-	}
-	
-	else{
-      	cerr << "Impossible d'ouvrir le fichier !" << endl;
+
+    ifstream fichier ("lexem_type.dico", ios::in);	// on ouvre en lecture
+    if (fichier)
+      {
+	string line;
+	while (getline (fichier, line))
+	  {			//operation sur line
+	    if (line.find ("#") == 0)
+	      {
+			//com     
+	      }
+	    else
+	      {
+			//push dans vector line
+			my_dico.push_back (line);
+	      }
+	  }
       }
 
+    else
+      {
+	cerr << "Impossible d'ouvrir le fichier !" << endl;
+      }
+  }
 
-//Destructeur
-    ~Dictionnaire ()
-    {
-    };
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-//Accesseurs et modifieurs
-    const string & get_type () const
-    {
-      return my_type;
-    }
-////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-    void set_name (string nom)
-    {
-      my_nom = nom;
-    }
-    void affiche_vector(){
-    	for (itr = my_dico.begin (); itr != my_dico.end (); ++itr)	//lit et affiche la liste chainée
-    	{
-	  		cout << *itr << endl;
-		}
-    }
-    
-};
-#endif
+
+
+void Dictionnaire::affiche_vect(void)
+  {
+    for (itr = my_dico.begin(); itr != my_dico.end(); ++itr)	//lit et affiche la liste chainée
+      {
+	cout << *itr << endl;
+      }
+  }
+  
+  void Dictionnaire::Type(lexem* lex)
+  {
+    for (itr = my_dico.begin(); itr != my_dico.end(); ++itr)	//lit la liste chainée
+      {
+		if ((*itr).compare((*lex).get_nom()) == 0)
+	  	{	
+	  		string type = *itr;
+	    	(*lex).set_type(type);
+	  	}
+      }
+  }

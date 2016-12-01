@@ -2,7 +2,7 @@ CFLAGS=-g
 
 all : test_syntaxe
 
-test_syntaxe :  lexem.o test_syntaxe.o
+test_syntaxe :  lexem.o Dictionnaire.o test_syntaxe.o
 	g++ -o test_syntaxe $^ $(LDFLAGS)
  
 

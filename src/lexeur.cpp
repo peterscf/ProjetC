@@ -27,7 +27,7 @@ main ()
 	  if ((caractere == ' ') || (caractere == '\t') || (caractere == '\n'))	//identifie separateur
 	    {
 	      mot = ss.str ();	//met le flux dans mot
-	      if (mot.find ("--") <= mot.length ())
+	      if (mot.find ("--") <= mot.length())
 		{
 		  caractere_valid = false;
 		}
@@ -50,7 +50,7 @@ main ()
 	  else if ((caractere == '(') || (caractere == ')') || (caractere == '[') || (caractere == ']') || (caractere == ':') || (caractere == ';'))	//identifie caracteres specieux qui separent
 	    {
 	      mot = ss.str ();	//met le flux dans mot
-		Lx.push_back (mot);
+	      Lx.push_back (mot);
 	      mot.erase (mot.begin (), mot.end ());	//clot le lexeme et passe a un nouveau
 	      ss.str ("");	//clear ss
 
