@@ -29,6 +29,7 @@ private:
   string my_file;
 
   vector < string > my_dico;	//vector qui contient les lexems partivulier du VHDL contenu dans le fichier <name>.dico
+  vector < string >::iterator itr;
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -42,11 +43,12 @@ public:
     	string line;
         while(getline(fichier, line)){  // tant que l'on peut mettre la ligne dans "contenu"
         	//operation sur line
-        	if (line.finf("#")<=line.lenght())
+        	if (line.find("##")<=line.lenght())
         		//ligne comentaire	
         	}
-        	else if(){
-        		
+        	else{
+        		//push dans vector line
+        		my_dico.push_back(line);
         	}
         }
 	}
@@ -73,5 +75,12 @@ public:
     {
       my_nom = nom;
     }
-  };
-#endif	/* ; */
+    void affiche_vector(){
+    	for (itr = my_dico.begin (); itr != my_dico.end (); ++itr)	//lit et affiche la liste chainée
+    	{
+	  		cout << *itr << endl;
+		}
+    }
+    
+};
+#endif
