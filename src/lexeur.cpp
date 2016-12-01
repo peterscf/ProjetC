@@ -12,7 +12,7 @@ using namespace std;
 int
 main ()
 {
-  ifstream fichier ("test.txt", ios::in);	// on ouvre le fichier en lecture
+  ifstream fichier ("filtre.vhd", ios::in);	// on ouvre le fichier en lecture
 
   if (fichier)			// si l'ouverture a réussi
     {
