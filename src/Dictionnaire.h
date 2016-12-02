@@ -26,8 +26,6 @@ public:
 //Conctructeur
   Dictionnaire(string file);
 
-
-
 //Destructeur
   ~Dictionnaire ()
   {
