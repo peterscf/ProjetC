@@ -4,7 +4,7 @@ Dictionnaire::Dictionnaire(string file)
   {
     my_file = file;
 
-    ifstream fichier ("lexem_type.dico", ios::in);	// on ouvre en lecture
+    ifstream fichier (const & my_file, ios::in);	// on ouvre en lecture
     if (fichier)
       {
 	string line;
