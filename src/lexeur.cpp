@@ -8,11 +8,11 @@
 
 
 using namespace std;
-
+bool test_caractere_special (char c);
 int
 main ()
 {
-  ifstream fichier ("filtre.vhd", ios::in);	// on ouvre le fichier en lecture
+  ifstream fichier ("test.txt", ios::in);	// on ouvre le fichier en lecture
 
   if (fichier)			// si l'ouverture a réussi
     {
@@ -24,19 +24,20 @@ main ()
       bool caractere_valid = true;
       while (fichier.get (caractere))
 	{
+	 caractere = tolower(caractere); //tout en minuscule
 	  if ((caractere == ' ') || (caractere == '\t') || (caractere == '\n'))	//identifie separateur
 	    {
 	      mot = ss.str ();	//met le flux dans mot
 	      if (mot.find ("--") <= mot.length())
 		{
 		  caractere_valid = false;
+			cout << mot.find("--");
+		}
+		else if (mot.find ("-") <= mot.length()){
+		
 		}
 	      else
 		{
-		  for (int i = 0; i < mot.size (); i++)
-		    {
-		      mot[i] = tolower (mot[i]);
-		    }
 		  Lx.push_back (mot);	//met "mot" dans la liste
 		}
 	      if ((caractere == '\n') && (caractere_valid == false))
@@ -47,7 +48,7 @@ main ()
 	      ss.str ("");	//clear ss
 
 	    }
-	  else if ((caractere == '(') || (caractere == ')') || (caractere == '[') || (caractere == ']') || (caractere == ':') || (caractere == ';'))	//identifie caracteres specieux qui separent
+	  else if (test_caractere_special(caractere) == true)	//identifie caracteres speciaux qui separent
 	    {
 	      mot = ss.str ();	//met le flux dans mot
 	      Lx.push_back (mot);
@@ -63,10 +64,6 @@ main ()
 		}
 	      else
 		{
-		  for (int i = 0; i < mot.size (); i++)
-		    {
-		      mot[i] = tolower (mot[i]);
-		    }
 		  Lx.push_back (mot);	//met "mot" dans la liste
 		}
 	      if ((caractere == '\n') && (caractere_valid == false))
@@ -101,5 +98,16 @@ main ()
 
   return 0;
 
+
+}
+
+
+bool test_caractere_special (char c){
+if ((c == '(') || (c == ')') || (c == '[') || (c == ']') || (c == ':') || (c == ';')|| (c == '+')|| (c == '&')||(c == '&')){
+		return true;
+}
+else{
+		return false;
+	}
 
 }
