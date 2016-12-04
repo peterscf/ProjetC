@@ -1,24 +1,15 @@
-#########################
-#header
-#########################
-LIBRARY
-USE
-#########################
-#Entity	
-#########################
-ENTITY
-IS
-PORT
-END
-#########################
-#PORT
-#########################
-IN
-OUT
+[header	],LIBRARY
+[header	],USE
+[entity	],ENTITY
+[entity	],IS
+[entity	],PORT
+[entity	],END
+[port	],IN
+[port	],OUT
 #########################
 #TYPE
 #########################
-STD_LOGIC
+[type	],STD_LOGIC
 STD_LOGIC_VECTOR
 INTEGER
 UNSIGNED
