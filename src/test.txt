@@ -1,6 +1,14 @@
-je	peux lire LOL un ficher --commentaire1 je suis
+----------------------blablabla
+----------------------toucolée;toutcolé
+----------------------blablabla
+----------------------je	peux lire LOL un ficher--commentaire1 je suis
 --commentaire2 je suis
-texte avec:des parthèses(ouvertes fermées)--commentaire4 je suis 
-des crochets[ouverts fermées]et--commentaire3 je suis
+texte avec:des parthèses(ouvertes fermées)--commentaire3 je suis
+des crochets[ouverts fermées]et---commentaire4 je suis
 des points;virgules 
-PUTE
+PLOUF'f
+alpha-beta
+signal<=5
+v>=c
+x >= f
+coucou]:=
