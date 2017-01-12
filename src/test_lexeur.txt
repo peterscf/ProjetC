@@ -1,0 +1,80 @@
+TEST	du
+LEXEur
+deux  espaces--comm1 et, 1commentaire
+-- comm2 ce test doit valider que tous les cas sont traités
+--comm3 On commence par les séparateurs
+les(simples)en premier
+(paranthèse ouverte (
+)parathèse fermée )
+[crochet ouvert  [
+]crochet fermé ]
+;point virgule ;
++plus +
+&eperluette &
+*etoile *
+.point .
+'apostrophe '
+,virgule ,
+!exclamation !
+paranthèse ouverte(ou( ou (ou ( fin
+paranthèse fermée)ou) ou )ou ) fin
+crochet ouvert[ou[ ou [ou [ fin
+crochet fermé]ou] ou ]ou ] fin
+addition+ou+ ou +ou + fin
+pointvirgule;ou; ou ;ou ; fin
+eperluette&ou& ou &ou & fin
+etoile*ou* ou *ou * fin
+point.ou. ou .ou . fin
+apostrophe'ou' ou 'ou ' fin
+virgule,ou, ou ,ou , fin
+exclamation!ou! ou !ou ! fin-- :comm4 stop simple =debut complexe
+les complexes maintenant!! !
+=égal = 
+-tiret -
+:deux points : 
+>supérieur >
+<inférieur <
+<=inferieur ou égal <=
+>=superieur ou égal >=
+=>affectation de signal =>
+:=affectation de variable :=
+\=different \=
+égal=ou= ou =ou = fin
+tiret-ou- ou -ou - fin
+deuxpoints:ou: ou :ou : fin
+superieur>ou> ou >ou > fin
+inferieur<ou< ou <ou < fin
+superieurégal>=ou>= ou >=ou >= fin
+inferieurégal<=ou<= ou <=ou <= fin
+affectationvariable:=ou:= ou :=ou := fin
+affectationsignal=>ou=> ou =>ou => fin
+different\=ou\= ou \=ou \= fin
+miantenant les suites de caracteres speciaux
+(; ou ;( ou (= ou =( ou (( fin
+); ou ;) ou )= ou =) ou )) fin
+[; ou ;[ ou [= ou =[ ou [[ fin
+]; ou ;] ou ]= ou =] ou ]] fin
+;+ ou +; ou ;= ou ;+ ou ;; fin
++; ou +; ou += ou =+ ou ++ fin
+&; ou ;& ou &= ou =& ou && fin
+*; ou ;* ou *= ou =* ou ** fin
+.; ou ;. ou .= ou =. ou .. fin
+'; ou ;' ou '= ou =' ou '' fin
+,; ou ;, ou ,= ou =, ou ,, fin
+!; ou ;! ou != ou =! ou !! fin
+-; ou ;- ou -= ou =- fin 
+<=; ou ;<= ou <== ou =<= ou <=<= fin
+>=; ou ;>= ou >== ou =>= ou >=>= fin
+=>; ou ;=> ou =>= ou ==> ou =>=> fin
+\=; ou ;\= ou \== ou =\= ou \=\= fin
+:=; ou ;:= ou =:= ou :== ou :=:= fin
+>; ou ;> ou => ou >= ou >> fin
+<; ou <; ou =< ou <= ou << fin
+:; ou ;: ou =: ou := ou :: fin
+=; ou ;= ou =- ou -= ou == fin
+
+
+
+
+
+
