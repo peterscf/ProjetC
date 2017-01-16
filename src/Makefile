@@ -1,14 +1,18 @@
 CFLAGS=-g
 
-all : test_syntaxe
+all : test_node
 
 test_syntaxe :  lexem.o Dictionnaire.o  lexical_funct.o test_syntaxe.o
 	g++ -o test_syntaxe $^ $(LDFLAGS)
- 
 
-%.o:%.cc
-	g++ $(CFLAGS) -c -g $^
+test_node :  node.o Dictionnaire.o test_node.o
+	#g++ -o test_node -g $^ $(LDFLAGS)
+	g++ -o $@ -g $^ $(LDFLAGS)
+ 
+%.o: %.cpp
+	g++ -o $@ -c $< $(CFLAGS)
+
 
 clean:
-	rm -f *.o *~ test_syntaxe test_syntaxe
+	rm -f *.o *~
 

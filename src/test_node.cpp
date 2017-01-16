@@ -16,6 +16,7 @@ int main(void){
 	node* root=NULL;
 	node* courant;
 	node* precedant;
+	int level =0;
 
     ifstream fichier ("lexem_type.dico", ios::in);	// on ouvre en lecture
     if (fichier)
@@ -26,22 +27,48 @@ int main(void){
 	  if (root==NULL){
 	  	root = new node (line);
 	  	precedant= root;
-	  	cout <<"-----------------------------\n";
 	  	root->print_node();
 	  }			
 	  	//operation sur line
-	  else if (line.find (",") == 0){
+	  else if (line.find("%") || line.find ("#")){
 	  	//decoupage de la ligne
-	  	   
+		do{
+			if (line.find("#") < line.find("%")){
+				courant = new node (line.substr(0,line.find("#")));
+				precedant->append(courant);
+		  		courant->print_node();
+
+				precedant = precedant->get_bros();// on prend le frere du precedant !
+				line=line.substr(line.find("#")+1,line.size()); //suppression du '#'
+			}
+			if(line.find("%")!= string::npos){ 			
+				courant = new node (line.substr(0,line.find("%")));
+				precedant->append(courant);
+		  		courant->print_node();
+				line=line.substr(line.find("%")+1,line.size()); //supression du '%'
+			}
+			
+		}while(line.find("%") != string::npos || line.find("#")!=string::npos);
+
+		if (line.size()!=0){
+			courant = new node (line);
+			precedant->append(courant);
+		  	courant->print_node();
+		}
 	  }
 	  else{
 		//ajouter node a n-1
 		  courant = new node (line);
 		  precedant->append(courant);
-		  cout <<"-----------------------------\n";
 		  courant->print_node();
 	      }
-	  }
+		level++;
+		precedant =root;
+		for(int i=1;i<level;i++){
+			precedant = precedant->get_child();
+	  	}
+
+		}
       }
 
     else
