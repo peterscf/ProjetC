@@ -27,7 +27,7 @@ Dictionnaire::Dictionnaire(string file)
     else
       {
 	cerr << "Impossible d'ouvrir le DICO!" << endl;
-	exit(1);
+	//exit(1);
       }
   }
 
@@ -48,10 +48,10 @@ void Dictionnaire::affiche_vect(void)
     for (itr = my_dico.begin(); itr != my_dico.end(); ++itr)	//lit la liste chainée
       {
 		if((*itr).find("%")!=string::npos){
-			string temp = (*itr).substr(0,(*itr).find("%")-1);
+			string temp = (*itr).substr(0,(*itr).find("%"));
 			if (temp.compare((*lex).get_nom()) == 0)
 	  		{	
-				temp = (*itr).substr(0,(*itr).find("%"));
+				temp = (*itr).substr((*itr).find("%")+1,(*itr).size());
 				(*lex).set_type(temp);
 	    			
 	  		}
@@ -63,8 +63,10 @@ void Dictionnaire::affiche_vect(void)
 	  		//string type = *itr;
 	    		(*lex).set_type((*itr));
 	  	}
-		else {
+		
+      }
+	 if (lex->get_type()=="unknow")
+		{
 			(*lex).set_type("etiquette");
 		}
-      }
   }

@@ -437,7 +437,7 @@ vector <lexem* > lexeur( string file_name)
 
   else				// sinon
     cerr << "Impossible d'ouvrir le fichier !" << endl;
-	exit(1);
+	//exit(1);
 
 	return Lx;
 
