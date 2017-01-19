@@ -9,7 +9,7 @@ test_node :  node.o Dictionnaire.o test_node.o
 	#g++ -o test_node -g $^ $(LDFLAGS)
 	g++ -o $@ -g $^ $(LDFLAGS)
 
-test_lexeur :  lexeur.o test_lexeur.o
+test_lexeur :  lexeur.o test_lexeur.o Dictionnaire.o
 	g++ -o $@ -g $^ $(LDFLAGS)
 
 %.o: %.cpp

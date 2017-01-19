@@ -71,6 +71,12 @@ public:
 		my_c_pos=c_pos;
 	}
 
+	void affiche_lexem(){
+		cout << "---------------------"<<endl;
+		cout 	<< "Nom: " << get_nom() << endl
+			<<  "Type: " << get_type()<< endl;
+}
+
 
 
 };

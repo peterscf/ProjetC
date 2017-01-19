@@ -26,7 +26,8 @@ Dictionnaire::Dictionnaire(string file)
 
     else
       {
-	cerr << "Impossible d'ouvrir le fichier !" << endl;
+	cerr << "Impossible d'ouvrir le DICO!" << endl;
+	exit(1);
       }
   }
 
