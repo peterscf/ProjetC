@@ -7,7 +7,7 @@
 
 using namespace std;
 void affiche_resultat_test_lexical(lexem lex);
-//void type_lexem (Lexem lex);
+
 
 int main(void){
 	lexem lex1("az_09");

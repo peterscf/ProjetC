@@ -12,11 +12,18 @@
 using namespace std;
 
 
+
 int main ()
 {
+
+//string file ="./test_file_vhd/arbiter.vhd";
+//string file ="./test_file_vhd/test_lexeur.txt";
+string file ="./test_file_vhd/filtre.vhd";
+//string file ="./test_file_vhd/arbiter.vhd";
+
 vector < lexem* > Lx ; //CREATION DU VECTEUR
 
-Lx = lexeur("arbiter.vhd");//Lexeur
+Lx = lexeur(file);//Lexeur
 
 Analyse_lexical (Lx);
 
