@@ -47,10 +47,24 @@ void Dictionnaire::affiche_vect(void)
   {
     for (itr = my_dico.begin(); itr != my_dico.end(); ++itr)	//lit la liste chainée
       {
-		if ((*itr).compare((*lex).get_nom()) == 0)
+		if((*itr).find("%")!=string::npos){
+			string temp = (*itr).substr(0,(*itr).find("%")-1);
+			if (temp.compare((*lex).get_nom()) == 0)
+	  		{	
+				temp = (*itr).substr(0,(*itr).find("%"));
+				(*lex).set_type(temp);
+	    			
+	  		}
+			
+			
+		}		
+		else if ((*itr).compare((*lex).get_nom()) == 0)
 	  	{	
-	  		string type = *itr;
-	    	(*lex).set_type(type);
+	  		//string type = *itr;
+	    		(*lex).set_type((*itr));
 	  	}
+		else {
+			(*lex).set_type("etiquette");
+		}
       }
   }
