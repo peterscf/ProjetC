@@ -2,12 +2,8 @@
 #include<sstream>
 #include<string>
 #include"lexem.h"
-#include"Dictionnaire.h"
-#include"lexem.h"
-#include"lexical_funct.h"
+#include"Analyse_lexical.h"
 
-#include <iostream>
-#include <string>
 
 using namespace std;
 void affiche_resultat_test_lexical(lexem lex);
@@ -18,7 +14,6 @@ int main(void){
 	lexem lex2("ab*d_12");
 	lexem lex3("____ADC999'");
 	lexem lex4("ABC_");
-	//Dictionnaire Dico("lexem_type.dico");
 	
 	cout<<"nom: "<<lex1.get_nom()<<endl;
 	cout<<"nom: "<<lex2.get_nom()<<endl;
@@ -34,11 +29,9 @@ int main(void){
 		return 0;
 }
 void affiche_resultat_test_lexical(lexem lex){
-	if(test_lexical(lex)){
+	if(test_orthographe(lex)){
 		cout <<"test lexical retourne vrai"<<endl;
-		cout<<"nom: "<<lex.get_nom()<<endl;
-		cout<<"type: "<< lex.get_type()<<endl;
-		cout<<"position: "<< lex.get_line_pos()<<","<< lex.get_col_pos()<<endl<<endl;
+		lex.affiche_lexem();
 	}
 	else {
 		cout<<"erreur lexical !!!"<< endl << lex.get_nom()<<endl<<endl;

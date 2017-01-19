@@ -6,22 +6,19 @@
 #include <string.h>
 #include <vector>
 #include "lexeur.h"
-#include "lexem.cpp"
 #include "Dictionnaire.h"
-
+#include "Analyse_lexical.h"
 
 using namespace std;
 
+
 int main ()
 {
-Dictionnaire vhd_dico("DICO.dico");
-vector < lexem* > Lx ;
-Lx = lexeur("arbiter.vhd");
-//affichage_vector(Lx);
-vector < lexem* >::iterator itr;
-for (itr = Lx.begin(); itr != Lx.end(); ++itr)	//lit la liste chainée
-      {
-	vhd_dico.Type((*itr));
-}
-affichage_vector(Lx);
+vector < lexem* > Lx ; //CREATION DU VECTEUR
+
+Lx = lexeur("arbiter.vhd");//Lexeur
+
+Analyse_lexical (Lx);
+
+affichage_vector(Lx);//affichage de chaque lexems du lexeur
 }

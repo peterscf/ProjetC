@@ -27,7 +27,7 @@ Dictionnaire::Dictionnaire(string file)
     else
       {
 	cerr << "Impossible d'ouvrir le DICO!" << endl;
-	//exit(1);
+		//exit (EXIT_FAILURE);
       }
   }
 
@@ -55,12 +55,9 @@ void Dictionnaire::affiche_vect(void)
 				(*lex).set_type(temp);
 	    			
 	  		}
-			
-			
 		}		
 		else if ((*itr).compare((*lex).get_nom()) == 0)
 	  	{	
-	  		//string type = *itr;
 	    		(*lex).set_type((*itr));
 	  	}
 		
@@ -70,3 +67,4 @@ void Dictionnaire::affiche_vect(void)
 			(*lex).set_type("etiquette");
 		}
   }
+//Fin Programme

@@ -22,7 +22,7 @@ crochet ouvert[ou[ ou [ou [ fin
 crochet fermé]ou] ou ]ou ] fin
 addition+ou+ ou +ou + fin
 pointvirgule;ou; ou ;ou ; fin
-eperluette&ou& ou &ou & fin
+esperluette&ou& ou &ou & fin
 etoile*ou* ou *ou * fin
 point.ou. ou .ou . fin
 apostrophe'ou' ou 'ou ' fin

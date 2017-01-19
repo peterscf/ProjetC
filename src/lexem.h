@@ -45,17 +45,17 @@ public:
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
 //Accesseurs et modifieurs
-	const string & get_type() const{
+	  string & get_type()  {
 		return my_type;	
 	}
 	
-	const string & get_nom()const{
+	  string & get_nom() {
 		return my_nom;
 	}
-	const int get_line_pos() const{
+	  int get_line_pos()  {
 		return my_l_pos;
 	}
-	const int get_col_pos() const{
+	  int get_col_pos()  {
 		return my_c_pos;
 	}
 ////////////////////////////////////////////////////////////////////////////////////
