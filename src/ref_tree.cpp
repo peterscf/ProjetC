@@ -75,6 +75,7 @@ ref_tree::ref_tree(string File){
 				}
 			}
 		}
+		cout<<"ref_tree ok"<<endl;
 	}
 
     else
@@ -85,11 +86,20 @@ ref_tree::ref_tree(string File){
 
 
 void ref_tree::affichage_tree(void){
-	//bool fin_arbre=FALSE;
-	node* courant=get_root();	
-	/*while(fin_arbre==TRUE){
-		courant->affiche_node();
-		if ()		
-		courant->courant->get_child();
-	}*/
+	/*node* root=NULL;
+	node* courant;
+				while (cournat->get_child()!=NULL){
+						precedant=precedant->get_child();
+						while (precedant->get_bros()!=NULL){
+							precedant=precedant->get_bros();
+						}
+					}*/
 }
+
+
+
+
+
+
+
+
