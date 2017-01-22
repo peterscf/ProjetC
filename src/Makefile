@@ -3,7 +3,7 @@ CFLAGS=-g
 
 
 
-all :test_lexeur test_node test_orthographe test_tree
+all :test_lexeur test_node test_orthographe test_ref_tree
 
 test_orthographe :  lexem.o Dictionnaire.o  Analyse_lexical.o test_orthographe.o
 	g++  -o $@ $^ $(LDFLAGS)
@@ -15,7 +15,7 @@ test_node :  node.o Dictionnaire.o test_node.o
 test_lexeur :  lexeur.o  Dictionnaire.o Analyse_lexical.o test_lexeur.o
 	g++ -o $@  $^ $(LDFLAGS)
 
-test_tree :  ref_tree.o node.o test_tree.o
+test_ref_tree :  ref_tree.o node.o test_ref_tree.o
 	g++ -o $@  $^ $(LDFLAGS)
 
 %.o: %.cpp
@@ -23,5 +23,5 @@ test_tree :  ref_tree.o node.o test_tree.o
 
 
 clean:
-	rm -f *.o *~ test_lexeur test_node test_orthographe 
+	rm -f *.o *~ test_lexeur test_node test_orthographe test_ref_tree
 

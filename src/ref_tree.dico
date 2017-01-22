@@ -1,23 +1,24 @@
-entity
-	etiquette_entity
-		is
-			end
-				;
-				et
-			port
-				parathese_ouverte
-					etiquette
-						deux_points
-							in
-							out
-								type
-									paranthese_fermee
-										point_virgule
-											end
-												etiquette
-												point_virgule
+VHDL
+	entity
+		etiquette_entity
+			is
+				end
+					;
+					et
+				port
+					parathese_ouverte
+						etiquette
+							deux_points
+								in
+								out
+									type
+										paranthese_fermee
 											point_virgule
-library
-	etiquette
-		;
+												end
+													etiquette
+													point_virgule
+												point_virgule
+	library
+		etiquette
+			;
 					
