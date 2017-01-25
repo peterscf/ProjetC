@@ -1,18 +1,19 @@
 VHDL_TREE
-	library
+	%library
 		etiquette
 			point_virgule
 #################################
-	use
+	%use
 		etiquette
 			point
 				etiquette
 					point
 						all
+							point_virgule
 						etiquette
 							point_virgule
 ##################################
-	entity
+	%entity
 		etiquette_entity
 			is
 				generic
@@ -22,8 +23,8 @@ VHDL_TREE
 								type
 									parenthese_fermee
 										point_virgule
-				port
-					parenthese_ouverte	
+				%port
+					parenthese_ouverte
 						etiquette
 							deux_points
 								in
@@ -118,7 +119,7 @@ VHDL_TREE
 																					etiquette_entity
 																						point_virgule
 ##################################
-	architecture
+	%architecture
 		etiquette_architecture
 			of
 				etiquette_entity
@@ -303,7 +304,7 @@ VHDL_TREE
 																			parenthese_fermee
 																				point_virgule
 ##################################							
-							process
+							%process
 								parenthese_ouverte
 									etiquette
 										parenthese_fermee
@@ -322,7 +323,7 @@ VHDL_TREE
 												valeur_numerique
 													apostrophe
 														point_virgule			
-									if
+									%if
 										parenthese_ouverte
 											etiquette
 												egal

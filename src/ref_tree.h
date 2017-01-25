@@ -26,6 +26,7 @@ class ref_tree{
 private:
 // declaration des attributs
 	node* my_root=NULL;
+	node* my_architecture=NULL;
 	node* my_process=NULL;
 	node* my_entity=NULL;
 	node* my_if=NULL;
@@ -70,6 +71,12 @@ public:
 	}
 	node* get_case_tree(){
 		return my_case;	
+	}
+	node* get_variable_tree(){
+		return my_variable;	
+	}
+	node* get_architecture_tree(){
+		return my_architecture;	
 	}
 	node* get_use_tree(){
 		return my_use;	

@@ -36,7 +36,7 @@ int main (int argc, char *argv[]){
 		    if(fichier){  // si l'ouverture a réussi       
 	  			char caractere;
 				while(fichier.get(caractere)){
-				cout<<caractere;
+					cout<<caractere;
 				if ()
 					system((char*)mkdir.c_str());
 				}          	
@@ -48,7 +48,6 @@ int main (int argc, char *argv[]){
 				cout << 
 		 	}
 	}
-//system((char*)mkdir.c_str());
 }//fin main
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////

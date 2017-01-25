@@ -36,7 +36,6 @@ public:
 		my_nom=nom;
 		my_type=type;
 		my_l_pos=l_pos;
-		my_c_pos=c_pos;
 		
 	
 	}
@@ -66,9 +65,8 @@ public:
 	void set_type(string type){
 		my_type=type;
 	}
-	void set_pos(int l_pos, int c_pos){
+	void set_pos(int l_pos){
 		my_l_pos=l_pos;
-		my_c_pos=c_pos;
 	}
 
 	void affiche_lexem(){

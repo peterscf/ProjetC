@@ -17,6 +17,9 @@ test_lexeur :  lexeur.o  Dictionnaire.o Analyse_lexical.o test_lexeur.o
 
 test_ref_tree :  ref_tree.o node.o test_ref_tree.o
 	g++ -o $@  $^ $(LDFLAGS)
+	
+comp :  ref_tree.o node.o lexeur.o  Dictionnaire.o Analyse_lexical.o Analyse_gramaticale.o comp.o
+	g++ -o $@  $^ $(LDFLAGS)
 
 %.o: %.cpp
 	g++ -o $@ -c $< $(CFLAGS)

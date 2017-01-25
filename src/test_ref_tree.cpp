@@ -19,8 +19,5 @@ int main ()
 
 ref_tree Reftree("arbre_de_ref.dico");
 
-//Reftree.affichage_tree();
-
-
 
 }

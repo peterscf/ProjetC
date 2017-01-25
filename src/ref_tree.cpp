@@ -12,8 +12,8 @@ using namespace std;
 ref_tree::ref_tree(string File){
 
 	node* root=NULL;
-	node* courant;
-	node* precedant;
+	node* courant=NULL;
+	node* precedant=NULL;
 	//int level =0;
 
     ifstream fichier (File.c_str(), ios::in);	// on ouvre en lecture
@@ -86,7 +86,7 @@ ref_tree::ref_tree(string File){
 
     else
       {
-	cerr << "Impossible d'ouvrir le fichier !" << endl;
+	cerr << "Impossible d'ouvrir le fichier pour cree l'arbre de ref !" << endl;
       }
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -134,6 +134,10 @@ node* ref_tree::create_node(string str){
 			if(my_case==NULL)
 			my_case=new_node;
 		}
+		else if(str=="architecture"){
+			if(my_case==NULL)
+			my_architecture=new_node;
+		}
 		else if(str=="use"){
 			if(my_use==NULL)
 			my_use=new_node;
@@ -141,7 +145,7 @@ node* ref_tree::create_node(string str){
 		
 		else{
 		cerr<<"Impossible de faire le lien !!!!"<<endl
-		<<"reconnaissance de root arbre particulier"<<endl;
+		<<"reconnaissance de root arbre particulier "<< str <<endl;
 		}
 	}
 	else{
