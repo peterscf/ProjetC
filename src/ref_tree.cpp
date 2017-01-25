@@ -20,60 +20,66 @@ ref_tree::ref_tree(string File){
     if (fichier){
 		string line;
 		int tab_index=0;
+		int nb_line=0;
 		while (getline (fichier, line)){
-			int idx_line;
-			if (line.rfind('\t')== string::npos){
-				idx_line=0;			
-			}
-			else{
-				idx_line=line.rfind('\t')+1;
-			}
-
-			if (root==NULL){
-				root = create_node (line.substr(idx_line,line.size()));
-				precedant= root;
-				my_root=root;
-			}
-			else{
+			//cout<<"line"<<nb_line<<endl;
+			if(line.find("#") == string::npos){
+				int idx_line;
+			
+				if (line.rfind('\t')== string::npos){
+					idx_line=0;			
+				}
+				else{
+					idx_line=line.rfind('\t')+1;
+				}
 				
-				if(tab_index < idx_line){
-					
-					courant = create_node (line.substr(idx_line,line.size()));
-					precedant->append(courant);
-					tab_index = idx_line;
-					precedant=precedant->get_child();
-					while (precedant->get_bros()!=NULL){
-						precedant=precedant->get_bros();
-					}
-					
-				}
-				else if (tab_index == idx_line){
+				if (root==NULL){
+					root = create_node (line.substr(idx_line,line.size()));
 					precedant= root;
-					for (int i=0; i< idx_line-1; i++){
+					my_root=root;
+				}
+				else{
+				
+					if(tab_index < idx_line){
+					
+						courant = create_node (line.substr(idx_line,line.size()));
+						precedant->append(courant);
+						tab_index = idx_line;
 						precedant=precedant->get_child();
 						while (precedant->get_bros()!=NULL){
 							precedant=precedant->get_bros();
 						}
+					
 					}
-					courant = create_node (line.substr(idx_line,line.size()));
-					precedant->append(courant);
-					precedant=courant;
-					tab_index = idx_line;
-				}
-				else if (tab_index > idx_line){
-					precedant= root;
-					for (int i=0; i< idx_line-1; i++){
-						precedant=precedant->get_child();
-						while (precedant->get_bros()!=NULL){
-							precedant=precedant->get_bros();
+					else if (tab_index == idx_line){
+						precedant= root;
+						for (int i=0; i< idx_line-1; i++){
+							precedant=precedant->get_child();
+							while (precedant->get_bros()!=NULL){
+								precedant=precedant->get_bros();
+							}
 						}
+						courant = create_node (line.substr(idx_line,line.size()));
+						precedant->append(courant);
+						precedant=courant;
+						tab_index = idx_line;
 					}
-					courant = create_node (line.substr(idx_line,line.size()));
-					precedant->append(courant);
-					precedant=courant;
-					tab_index = idx_line;
+					else if (tab_index > idx_line){
+						precedant= root;
+						for (int i=0; i< idx_line-1; i++){
+							precedant=precedant->get_child();
+							while (precedant->get_bros()!=NULL){
+								precedant=precedant->get_bros();
+							}
+						}
+						courant = create_node (line.substr(idx_line,line.size()));
+						precedant->append(courant);
+						precedant=courant;
+						tab_index = idx_line;
+					}
 				}
 			}
+			nb_line++;
 		}
 		cout<<"ref_tree ok"<<endl;
 	}
