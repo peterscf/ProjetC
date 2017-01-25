@@ -30,15 +30,15 @@ ref_tree::ref_tree(string File){
 			}
 
 			if (root==NULL){
-				root = new node (line);
+				root = create_node (line.substr(idx_line,line.size()));
 				precedant= root;
-				my_ref_tree=root;
+				my_root=root;
 			}
 			else{
-
+				
 				if(tab_index < idx_line){
 					
-					courant = new node (line.substr(idx_line,line.size()));
+					courant = create_node (line.substr(idx_line,line.size()));
 					precedant->append(courant);
 					tab_index = idx_line;
 					precedant=precedant->get_child();
@@ -55,7 +55,7 @@ ref_tree::ref_tree(string File){
 							precedant=precedant->get_bros();
 						}
 					}
-					courant = new node (line.substr(idx_line,line.size()));
+					courant = create_node (line.substr(idx_line,line.size()));
 					precedant->append(courant);
 					precedant=courant;
 					tab_index = idx_line;
@@ -68,7 +68,7 @@ ref_tree::ref_tree(string File){
 							precedant=precedant->get_bros();
 						}
 					}
-					courant = new node (line.substr(idx_line,line.size()));
+					courant = create_node (line.substr(idx_line,line.size()));
 					precedant->append(courant);
 					precedant=courant;
 					tab_index = idx_line;
@@ -83,8 +83,68 @@ ref_tree::ref_tree(string File){
 	cerr << "Impossible d'ouvrir le fichier !" << endl;
       }
 }
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+node* ref_tree::create_node(string str){
+	node* new_node;
+	if(str.find('\r')!=string::npos){
+		str=str.substr(0,str.find('\r'));
+	}
 
+	if (str.find("%")!=string::npos){
 
+		str=str.substr(str.find("%")+1,str.size());
+		new_node = new node (str);
+		
+		if(str=="library"){
+			if(my_library==NULL) 
+			my_library=new_node;
+		}
+		else if(str=="process"){
+			if(my_process==NULL)
+			my_process=new_node;
+		}
+		else if(str=="entity"){
+			if(my_entity==NULL)
+			my_entity=new_node;
+		}
+		else if(str=="if"){
+			if(my_if==NULL)
+			my_if=new_node;
+		}
+		else if(str=="port"){
+			if(my_port==NULL)
+			my_port=new_node;
+		}
+		else if(str=="signal"){
+			if(my_signal==NULL)
+			my_signal=new_node;
+		}
+		else if(str=="variable"){
+			if(my_variable==NULL)
+			my_variable=new_node;
+		}
+		else if(str=="case"){
+			if(my_case==NULL)
+			my_case=new_node;
+		}
+		else if(str=="use"){
+			if(my_use==NULL)
+			my_use=new_node;
+		}
+		
+		else{
+		cerr<<"Impossible de faire le lien !!!!"<<endl
+		<<"reconnaissance de root arbre particulier"<<endl;
+		}
+	}
+	else{
+		new_node = new node (str);
+	}
+	return new_node;
+}
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 void ref_tree::affichage_tree(void){
 	/*node* root=NULL;
 	node* courant;

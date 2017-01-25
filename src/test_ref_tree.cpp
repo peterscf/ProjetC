@@ -17,9 +17,9 @@ using namespace std;
 int main ()
 {
 
-ref_tree Reftree("ref_tree.dico");
+ref_tree Reftree("arbre_de_ref.dico");
 
-Reftree.affichage_tree();
+//Reftree.affichage_tree();
 
 
 
