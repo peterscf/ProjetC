@@ -30,7 +30,7 @@ vector < lexem* >::iterator itr;
 			}
 			
 			//Typage des etiquette !!!		
-			if ((*(*itr)).get_type()=="etiquette"){
+			/*if ((*(*itr)).get_type()=="etiquette"){
 				string type_prec = (*(*(itr-1))).get_type();
 			
 				if(type_prec == "signal"){ //signal
@@ -43,7 +43,10 @@ vector < lexem* >::iterator itr;
 						(*(*itr)).set_type("etiquette_entity");
 				}
 				else if(type_prec == "architecture" ) {//Architecture
-						(*(*itr)).set_type("etiquette_achitecture");
+						(*(*itr)).set_type("etiquette_architecture");
+				}
+				else if(type_prec == "architecture" ) {//Architecture
+						(*(*itr)).set_type("etiquette_architecture");
 				}
 				else{
 					for (vector < lexem* >::iterator itr2 = Lx_vector.begin(); itr2 != itr; ++itr2){
@@ -53,7 +56,7 @@ vector < lexem* >::iterator itr;
 						}	
 					}
 				} 
-			}//if etiquette 
+			}//if etiquette */
 		}//if test orthographe
 	}//for
 }//fonction

@@ -18,6 +18,9 @@ test_lexeur :  lexeur.o  Dictionnaire.o Analyse_lexical.o test_lexeur.o
 test_ref_tree :  ref_tree.o node.o test_ref_tree.o
 	g++ -o $@  $^ $(LDFLAGS)
 	
+test_analyse_gramaticale :  ref_tree.o node.o lexeur.o  Dictionnaire.o Analyse_lexical.o Analyse_gramaticale.o test_analyse_gramaticale.o
+	g++ -o $@  $^ $(LDFLAGS)
+
 comp :  ref_tree.o node.o lexeur.o  Dictionnaire.o Analyse_lexical.o Analyse_gramaticale.o comp.o
 	g++ -o $@  $^ $(LDFLAGS)
 
@@ -26,5 +29,5 @@ comp :  ref_tree.o node.o lexeur.o  Dictionnaire.o Analyse_lexical.o Analyse_gra
 
 
 clean:
-	rm -f *.o *~ test_lexeur test_node test_orthographe test_ref_tree
+	rm -f *.o *~ test_lexeur test_node test_orthographe test_ref_tree comp test_analyse_gramaticale
 

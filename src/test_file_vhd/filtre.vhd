@@ -4,7 +4,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity FILTER is
-  port(Filter_In    : in  std_logic_vector(7 downto 0);
+  port(--Filter_In    : in  std_logic_vector(7 downto 0);
         CLK         : in  std_logic;
         RESET       : in  std_logic;
         ADC_Eocb     : in  std_logic;
@@ -15,7 +15,8 @@ entity FILTER is
         DAC_csb      : out std_logic;
         LDACb        : out std_logic;
         CLRB         : out std_logic;
-        Filter_Out  : out std_logic_vector(7 downto 0)) ;
+        --Filter_Out  : out std_logic_vector(7 downto 0)
+        ) ;
 end FILTER;
 
 architecture A of FILTER is

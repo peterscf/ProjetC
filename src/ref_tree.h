@@ -36,7 +36,11 @@ private:
 	node* my_variable=NULL;
 	node* my_case=NULL;
 	node* my_use=NULL;
-	
+	node* my_decl_port=NULL;
+	node* my_vector=NULL;
+	node* my_aff_var=NULL;
+	node* my_aff_sig=NULL;
+	node* my_assignement=NULL;
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
@@ -80,6 +84,21 @@ public:
 	}
 	node* get_use_tree(){
 		return my_use;	
+	}
+	node* get_decl_port_tree(){
+		return my_decl_port;	
+	}
+	node* get_vector_tree(){
+		return my_vector;	
+	}
+	node* get_aff_var_tree(){
+		return my_aff_var;	
+	}
+	node* get_aff_sig_tree(){
+		return my_aff_sig;	
+	}
+	node* get_assignement_tree(){
+		return my_assignement;	
 	}
 
 		

@@ -96,7 +96,44 @@ node* ref_tree::create_node(string str){
 	if(str.find('\r')!=string::npos){
 		str=str.substr(0,str.find('\r'));
 	}
-
+	//test si sous arbre a lier
+	if(str=="declaration_signal_tree"){
+		if(my_signal==NULL){
+			new_node=my_signal;
+		}
+	}
+	else if(str=="declaration_port_tree"){
+		if(my_decl_port==NULL){
+			new_node=my_decl_port;
+		}
+	}
+	else if(str=="type_vector_tree"){
+		if(my_vector==NULL){
+			new_node=my_vector;
+		}
+	}
+	else if(str=="declaration_variable_tree"){
+		if(my_port==NULL){
+			new_node=my_variable;
+		}
+	}
+	else if(str=="afectation_variable_tree"){
+		if(my_aff_var==NULL){
+			new_node=my_aff_var;
+		}
+	}
+	else if(str=="affectation_signal_tree"){
+		if(my_aff_sig==NULL){
+			new_node=my_aff_sig;
+		}
+	}
+	else if(str=="assignement_tree"){
+		if(my_assignement==NULL){
+			new_node=my_assignement;
+		}
+	}
+	
+	//test si sous arbre !!!
 	if (str.find("%")!=string::npos){
 
 		str=str.substr(str.find("%")+1,str.size());
@@ -105,6 +142,22 @@ node* ref_tree::create_node(string str){
 		if(str=="library"){
 			if(my_library==NULL) 
 			my_library=new_node;
+		}
+		else if (str == "type_vector"){
+			if(my_vector==NULL)
+			my_vector=new_node;
+		}
+		else if(str == "etiquette"){
+			if(my_aff_sig==NULL)
+			my_decl_port=new_node;
+		}
+		else if(str == "etiquette_signal"){
+			if(my_aff_sig==NULL)
+			my_aff_sig=new_node;
+		}
+		else if(str == "etiquette_variable"){
+			if(my_aff_var==NULL)
+			my_aff_var=new_node;
 		}
 		else if(str=="process"){
 			if(my_process==NULL)
@@ -122,7 +175,7 @@ node* ref_tree::create_node(string str){
 			if(my_port==NULL)
 			my_port=new_node;
 		}
-		else if(str=="signal"){
+		else if(str=="type_signal"){
 			if(my_signal==NULL)
 			my_signal=new_node;
 		}

@@ -3,20 +3,18 @@ use IEEE.std_logic_1164.ALL ;
 
 entity arbiter is
 port (	clk 	: in std_logic ;
-	resetn	: in std_logic ;
-	R	: in std_logic_vector(1 to 3) ;
-	ACK	: out std_logic_vector(1 to 3) );
+	resetn	: in std_logic ;);
 end arbiter ;
 
 
 architecture behaviour of arbiter is
 
-type state_arbiter is (Idle, Proc1, Proc2, Proc3) ;
-signal current_state : state_arbiter ;
-signal next_state : state_arbiter ;
+--type state_arbiter is (Idle, Proc1, Proc2, Proc3) ;
+signal current_state : std_logic ;
+signal next_state : std_logic ;
 
 begin
-P_state : process (clk, resetn)
+process (clk, resetn)
 
 begin
 
@@ -24,10 +22,10 @@ if (resetn ='0') then current_state <= Idle;
 elsif(clk'event and clk='1') then current_state <= next_state;
 end if;
 
-end process P_state ;
+end process;
 
 
-P_Next_State_output : process (current_state, R)
+process (current_state, R)
 begin
 
 case current_state is
