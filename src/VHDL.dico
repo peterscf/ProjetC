@@ -83,11 +83,6 @@ and%operator
 or%operator
 not%operator
 xor%operator
-&%operator
-############################
-#concatenation
-############################
-&%concatenation
 ############################
 #point
 ############################
