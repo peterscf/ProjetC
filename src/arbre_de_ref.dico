@@ -4,7 +4,7 @@ VHDL_TREE
 			point_virgule
 #################################
 	%use
-		etiquette
+		etiquette_library
 			point
 				etiquette
 					point
@@ -29,61 +29,85 @@ VHDL_TREE
 						%etiquette
 							deux_points
 								in
-##################type_tree
-									%type
+									type
 										point_virgule
 											declaration_port_tree
 										parenthese_fermee
 											point_virgule
 												end
 													point_virgule
-													etiquette
+													etiquette_entity
 														point_virgule
 										point_virgule
 											parenthese_fermee
 												point_virgule
 													end
 														point_virgule
-														etiquette
+														etiquette_entity
 															point_virgule
-##################type_vector_tree
-									%type_vector
-										parenthese_ouverte
-											valeur_numerique
-												downto
-													valeur_numerique
-														parenthese_fermee
-															point_virgule
-																declaration_port_tree
-															parenthese_fermee
-																point_virgule
-																	end
-																		point_virgule
-																		etiquette
-																			point_virgule
-															point_virgule
-																parenthese_fermee
-																	point_virgule
-																		end
-																			point_virgule
-																			etiquette
-																				point_virgule
-								out
-									type_tree
 									type_vector_tree
+										point_virgule
+											declaration_port_tree
+										parenthese_fermee
+											point_virgule
+												end
+													point_virgule
+													etiquette_entity
+														point_virgule
+										point_virgule
+											parenthese_fermee
+												point_virgule
+													end
+														point_virgule
+														etiquette_entity
+															point_virgule
+								out
+									type
+										point_virgule
+											declaration_port_tree
+										parenthese_fermee
+											point_virgule
+												end
+													point_virgule
+													etiquette_entity
+														point_virgule
+										point_virgule
+											parenthese_fermee
+												point_virgule
+													end
+														point_virgule
+														etiquette_entity
+															point_virgule
+									type_vector_tree
+										point_virgule
+											declaration_port_tree
+										parenthese_fermee
+											point_virgule
+												end
+													point_virgule
+													etiquette_entity
+														point_virgule
+										point_virgule
+											parenthese_fermee
+												point_virgule
+													end
+														point_virgule
+														etiquette_entity
+															point_virgule
 							virgule
 								declaration_port_tree
 ##################################
 	%architecture
-		etiquette_architecture
+		etiquette
 			of
 				etiquette_entity
 					type_signal
-						etiquette_signal
+						etiquette
 							deux_points
 								type
 									point_virgule
-								type_vector
+##################type_vector_tree
+								%type_vector
 									parenthese_ouverte
 										valeur_numerique
 											downto
@@ -91,7 +115,7 @@ VHDL_TREE
 													parenthese_fermee
 														point_virgule
 							virgule
-								etiquette_signal
+								etiquette
 									deux_points
 										type
 											point_virgule
