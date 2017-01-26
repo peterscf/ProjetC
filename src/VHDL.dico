@@ -79,6 +79,11 @@ map
 +%operator
 -%operator
 *%operator
+and%operator
+or%operator
+not%operator
+xor%operator
+&%operator
 ############################
 #concatenation
 ############################
