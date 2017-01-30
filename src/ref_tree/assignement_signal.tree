@@ -1,0 +1,8 @@
+etiquette
+	inferieur_ou_egal
+		etiquette_signal
+			point_virgule
+etiquette_signal
+	inferieur_ou_egal
+		etiquette_signal
+			point_virgule

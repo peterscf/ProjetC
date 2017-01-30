@@ -1,0 +1,23 @@
+etiquette
+	deux_points
+		etiquette
+			port
+				map
+					parenthese_ouverte
+						etiquette
+							assignement
+								etiquette
+									parenthese_fermee
+										point_virgule
+									virgule
+										etiquette
+											assignement
+												etiquette
+													parenthese_fermee
+														point_virgule
+						parenthese_fermee
+							point_virgule
+						virgule
+							etiquette
+								parenthese_fermee
+									point_virgule

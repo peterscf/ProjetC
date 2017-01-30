@@ -1,0 +1,25 @@
+when
+	apostrophe
+		valeur_numerique
+			apostrophe
+				assignement
+					etiquette
+						inferieur_ou_egal
+							apostrophe
+								valeur_numerique
+									apostrophe
+							guillemets
+								valeur_numerique
+									guillemets
+	guillemets
+		valeur_numerique
+			guillemets
+				assignement
+					etiquette
+						inferieur_ou_egal
+							apostrophe
+								valeur_numerique
+									apostrophe
+							guillemets
+								valeur_numerique
+									guillemets

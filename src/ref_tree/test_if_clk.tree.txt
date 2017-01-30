@@ -1,0 +1,44 @@
+if
+	etiquette
+		apostrophe
+			event
+				operator
+					etiquette
+						egal
+							apostrophe
+								valeur_numerique
+									apostrophe
+	
+	etiquette
+		egal
+			apostrophe
+				valeur_numerique
+					apostrophe
+						operator
+							etiquette
+								apostrophe
+									event
+	parenthese_ouverte
+		etiquette
+			apostrophe
+				event
+					operator
+						etiquette
+							egal
+								apostrophe
+									valeur_numerique
+										apostrophe
+											parenthese_fermee
+		
+		etiquette
+			egal
+				apostrophe
+					valeur_numerique
+						apostrophe
+							operator
+								etiquette
+									apostrophe
+										event
+										 parenthese_fermee
+	
+				

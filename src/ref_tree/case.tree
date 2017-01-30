@@ -1,0 +1,12 @@
+case
+	etiquette
+		is
+			when_case.tree
+				point_virgule
+					end
+						case
+							point_virgule	
+					when_case.tree
+						end
+							case
+								point_virgule		

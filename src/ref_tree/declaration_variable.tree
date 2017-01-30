@@ -1,0 +1,9 @@
+%type_variable
+	etiquette
+		deux_points
+			type
+				point_virgule
+			type_vector.tree
+				point_virgule
+		virgule
+				declaration_variable.tree

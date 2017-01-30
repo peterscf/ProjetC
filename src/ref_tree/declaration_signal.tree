@@ -1,0 +1,9 @@
+%type_signal
+	etiquette
+		deux_points
+			type
+				point_virgule
+			type_vector.tree
+				point_virgule
+		virgule
+			declaration_signal.tree
