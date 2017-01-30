@@ -1,6 +1,10 @@
 entity
 	etiquette
 		is
+			end
+				point_virgule
+				etiquette_entity
+					point_virgule
 			%generic
 				parenthese_ouverte
 					etiquette
@@ -8,7 +12,19 @@ entity
 							type_vector.tree
 								parenthese_fermee
 									point_virgule
+										end
+											point_virgule
+											etiquette_entity
+												point_virgule
 							type
 								parenthese_fermee
 									point_virgule
+										end
+											point_virgule
+											etiquette_entity
+												point_virgule					
 			port.tree
+				end
+					point_virgule
+					etiquette_entity
+						point_virgule
