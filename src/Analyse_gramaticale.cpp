@@ -16,9 +16,12 @@ using namespace std;
 void Analyse_gramaticale(vector <lexem*> Lx_vector){
 
 	node* node_courant=NULL;
+	node* node_precedant=NULL;
 	vector < lexem* >::iterator itr_lex;
+	string path="./ref_tree/";
 	
 	ref_tree library_tree("./ref_tree/library_use.tree");
+	ref_tree use_tree("./ref_tree/use.tree");
 	ref_tree entity_tree("./ref_tree/entity.tree");
 	ref_tree architecture_tree("./ref_tree/architecture.tree");
 	ref_tree component_tree("./ref_tree/component.tree");
@@ -43,6 +46,12 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 				}
 				(*(*itr_lex)).affiche_lexem();		
 			}
+		//traitement du pointeur quand il ya un lien dans l'arbre de ref
+		/*if((((*node_courant)).get_value()).find(".")!=string::npos){
+			
+			ref_tree* ptr_ref_tree = new ref_tree (path+((*node_courant)).get_value());
+			node_courant = (*ptr_ref_tree).get_root();
+		}*/
 		
 		if((*(*itr_lex)).get_type() == "architecture"){
 			//pointer sur architecture_tree
@@ -51,17 +60,27 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 		}
 		else if((*(*itr_lex)).get_type() == "port"){
 			//pointer sur port_tree
+			
 			node_courant = port_tree.get_root();
 			position_lex="port";
 		}
-		else if ((*(*itr_lex)).get_type() == "etiquette" && position_lex == "port"){
-		
+		else if ((*(*itr_lex)).get_type() == "etiquette" && (position_lex == "port" || position_lex == "decl_port")){
+			if (position_lex=="port"){
+				node_precedant=node_courant ;
+			}
+			position_lex == "decl_port";			
 			node_courant = declaration_port_tree.get_root();
+			
 		}
 		else if((*(*itr_lex)).get_type() == "entity"){
 			//pointer sur port_tree
 			node_courant = entity_tree.get_root();
 			position_lex="entity";
+		}
+		else if((*(*itr_lex)).get_type() == "use"){
+			//pointer sur port_tree
+			node_courant = use_tree.get_root();
+			position_lex="use";
 		}
 		else if((*(*itr_lex)).get_type() == "type_signal"){
 			//pointer sur signal_tree
@@ -97,6 +116,12 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 		
 		/////////////////////////////////////////////////////////
 		//test gramaticale
+		if (node_courant == NULL){
+						//node_precedant = node_precedant->get_child();
+						
+						node_courant= node_precedant->get_child();
+						cout<<"/!\\node precedant : "<< node_courant->get_value()<<endl;
+		}
 		if ((*(*itr_lex)).get_type() == node_courant->get_value()){
 			cout<<"node comparaison : "<< node_courant->get_value()<<endl;
 			if((*(*itr_lex)).get_type()=="etiquette"){
@@ -115,6 +140,12 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 				}
 				else{
 					node_courant = node_courant->get_bros();
+					if (node_courant == NULL){
+						//node_precedant = node_precedant->get_child();
+						
+						node_courant= node_precedant->get_child();
+						cout<<"/!\\node precedant : "<< node_courant->get_value()<<endl;
+					}
 				}
 			}
 			if (node_courant == NULL){
