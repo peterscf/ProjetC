@@ -1,0 +1,13 @@
+etiquette
+	operator
+		etiquette
+		parenthese_ouverte
+			expression.tree
+				parenthese_fermee
+	egale
+		apostrophe
+			valeur_numerique
+				apostrophe
+		guillemmets
+			valeur_numerique
+				guillemenets

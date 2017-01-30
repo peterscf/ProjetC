@@ -1,0 +1,9 @@
+etiquette
+	deux_points
+		sens
+			type
+				point_virgule
+			type_vector.tree
+				point_virgule
+	virgule
+#		declaration_port.tree

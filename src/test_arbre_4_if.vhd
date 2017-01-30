@@ -3,10 +3,10 @@ use IEEE.std_logic_1164.ALL ;
 use ieee.numeric_std.all;
 
 entity ALU is
-	port(	A,B		: in STD_LOGIC_VECTOR(7 downto 0) ;
-		CMD		: in STD_LOGIC_VECTOR(2 downto 0) ;
+	port(	A,B		: in STD_LOGIC ;
+		CMD		: in STD_LOGIC;
 		Zero		: out std_logic; 
-		S		: out STD_LOGIC_VECTOR(7 downto 0) ;
+		S		: out STD_LOGIC ;
 		rst 	:in STD_LOGIC);
 end ALU;
 

@@ -1,0 +1,14 @@
+entity
+	etiquette
+		is
+			%generic
+				parenthese_ouverte
+					etiquette
+						deux_points
+							type_vector.tree
+								parenthese_fermee
+									point_virgule
+							type
+								parenthese_fermee
+									point_virgule
+			port.tree

@@ -17,7 +17,7 @@ int main ()
 
 vector < lexem* > Lx ; //CREATION DU VECTEUR
 
-string file ="./test_file_vhd/arbiter.vhd";
+string file ="test_arbre_4_if.vhd";
 
  
 		Lx = lexeur(file);//Lexeur

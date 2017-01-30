@@ -1,0 +1,14 @@
+%architecture
+	etiquette
+		of
+			etiquette_entity
+				is
+					component.tree
+					declaration_signal.tree
+					begin
+						process.tree
+						affectation_signal.tree
+						when.tree
+							end
+								etiquette_architecture
+									point_virgule

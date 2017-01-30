@@ -1,0 +1,9 @@
+use
+	etiquette_library
+		point
+			etiquette
+				point
+					all
+						point_virgule
+					etiquette
+						point_virgule

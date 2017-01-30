@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//constructeur : creation de l'arbre de referance
+//constructeur : creation de l'arbre de ref
 ref_tree::ref_tree(string File){
 
 	node* root=NULL;
@@ -97,7 +97,7 @@ node* ref_tree::create_node(string str){
 		str=str.substr(0,str.find('\r'));
 	}
 	//test si sous arbre a lier
-	if(str=="declaration_signal_tree"){
+/*	if(str=="declaration_signal_tree"){
 		if(my_signal==NULL){
 			new_node=my_signal;
 		}
@@ -200,7 +200,7 @@ node* ref_tree::create_node(string str){
 		cerr<<"Impossible de faire le lien !!!!"<<endl
 		<<"reconnaissance de root arbre particulier "<< str <<endl;
 		}
-	}
+	}*/
 	else{
 		new_node = new node (str);
 	}

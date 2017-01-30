@@ -18,7 +18,16 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 	node* node_courant=NULL;
 	vector < lexem* >::iterator itr_lex;
 	
-	ref_tree RefTree("arbre_de_ref.dico");
+	ref_tree library_tree("./ref_tree/library_use.tree");
+	ref_tree entity_tree("./ref_tree/entity.tree");
+	ref_tree architecture_tree("./ref_tree/architecture.tree");
+	ref_tree component_tree("./ref_tree/component.tree");
+	ref_tree declaration_port_tree("./ref_tree/declaration_port.tree");
+	ref_tree expression_tree("./ref_tree/expression.tree");
+	ref_tree port_tree("./ref_tree/port.tree");
+	ref_tree type_vector_tree("./ref_tree/type_vector.tree");
+	ref_tree if_tree("./ref_tree/if.tree");
+	
 	string position_lex;
 	
 	for (itr_lex = Lx_vector.begin(); itr_lex != Lx_vector.end(); ++itr_lex){
@@ -37,53 +46,53 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 		
 		if((*(*itr_lex)).get_type() == "architecture"){
 			//pointer sur architecture_tree
-			node_courant = RefTree.get_architecture_tree();
+			node_courant = architecture_tree.get_root();
 			position_lex="architecture";
 		}
 		else if((*(*itr_lex)).get_type() == "port"){
 			//pointer sur port_tree
-			node_courant = RefTree.get_port_tree();
+			node_courant = port_tree.get_root();
 			position_lex="port";
 		}
 		else if ((*(*itr_lex)).get_type() == "etiquette" && position_lex == "port"){
 		
-			node_courant = RefTree.get_decl_port_tree();
+			node_courant = declaration_port_tree.get_root();
 		}
 		else if((*(*itr_lex)).get_type() == "entity"){
 			//pointer sur port_tree
-			node_courant = RefTree.get_entity_tree();
+			node_courant = entity_tree.get_root();
 			position_lex="entity";
 		}
 		else if((*(*itr_lex)).get_type() == "type_signal"){
 			//pointer sur signal_tree
-			node_courant = RefTree.get_signal_tree();
+			//node_courant = signal_tree();
 			position_lex="signal";
 		}
 		else if((*(*itr_lex)).get_type() == "variable"){
 			//pointer sur veriable_tree
-			node_courant = RefTree.get_variable_tree();
+			//node_courant = RefTree.get_variable_tree();
 			position_lex="variable";
 		}
 		else if((*(*itr_lex)).get_type() == "library"){
 			//pointer sur library_tree
-			node_courant = RefTree.get_library_tree();
+			node_courant = library_tree.get_root();
 			position_lex="library";
 		}
-		else if((*(*itr_lex)).get_type() == "use"){
+		/*else if((*(*itr_lex)).get_type() == "use"){
 			//pointer sur use_tree
 			node_courant = RefTree.get_use_tree();
 			position_lex="use";
-		}
+		}*/
 		else if((*(*itr_lex)).get_type() == "if"){
 			//pointer sur if_tree
-			node_courant = RefTree.get_if_tree();
+			node_courant = if_tree.get_root();
 			position_lex="if";
 		}
-		else if((*(*itr_lex)).get_type() == "case"){
+		/*else if((*(*itr_lex)).get_type() == "case"){
 			//pointer sur case_tree
 			node_courant = RefTree.get_case_tree();
 			position_lex="case";
-		}
+		}*/
 		
 		
 		/////////////////////////////////////////////////////////
@@ -115,6 +124,9 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 		}
 	}
 }
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 //Fin du programme

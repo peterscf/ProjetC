@@ -1,0 +1,9 @@
+type_vector
+	parenthese_ouverte
+		valeur_numerique
+			downto
+				valeur_numerique
+					parenthese_fermee
+			upto
+				valeur_numerique
+					parenthese_fermee
