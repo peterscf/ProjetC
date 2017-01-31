@@ -1,13 +1,13 @@
-%architecture
+architecture
 	etiquette
 		of
 			etiquette_entity
 				is
 					component.tree
 						begin
-						end
-							etiquette_architecture
-								point_virgule
+							end
+								etiquette_architecture
+									point_virgule
 						assignement_signal.tree
 							end
 								etiquette_architecture
@@ -33,28 +33,28 @@
 								etiquette_architecture
 									point_virgule
 					declaration_signal.tree
-					begin
-						assignement_signal.tree
-							end
-								etiquette_architecture
-									point_virgule
-						affectation_signal.tree
-							end
-								etiquette_architecture
-									point_virgule
-						port_map.tree
-							end
-								etiquette_architecture
-									point_virgule
-						process.tree
-							end
-								etiquette_architecture
-									point_virgule
-						affectation_signal.tree
-							end
-								etiquette_architecture
-									point_virgule
-						when.tree
-							end
-								etiquette_architecture
-									point_virgule
+						begin
+							assignement_signal.tree
+								end
+									etiquette_architecture
+										point_virgule
+							affectation_signal.tree
+								end
+									etiquette_architecture
+										point_virgule
+							port_map.tree
+								end
+									etiquette_architecture
+										point_virgule
+							process.tree
+								end
+									etiquette_architecture
+										point_virgule
+							affectation_signal.tree
+								end
+									etiquette_architecture
+										point_virgule
+							when.tree
+								end
+									etiquette_architecture
+										point_virgule

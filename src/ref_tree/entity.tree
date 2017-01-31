@@ -5,7 +5,7 @@ entity
 				point_virgule
 				etiquette_entity
 					point_virgule
-			%generic
+			generic
 				parenthese_ouverte
 					etiquette
 						deux_points
