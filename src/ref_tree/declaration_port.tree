@@ -3,7 +3,11 @@ etiquette
 		sens
 			type
 				point_virgule
+					declaration_port.tree
+						%fin
 					%fin
 			type_vector.tree
 				point_virgule
+					declaration_port.tree
+						%fin					
 					%fin

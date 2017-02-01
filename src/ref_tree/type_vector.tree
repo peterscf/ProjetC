@@ -4,6 +4,8 @@ type_vector
 			downto
 				valeur_numerique
 					parenthese_fermee
+						%fin
 			upto
 				valeur_numerique
 					parenthese_fermee
+						%fin

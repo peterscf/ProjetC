@@ -1,355 +1,265 @@
-etiquette
+etiquette_signal
 	egal
-		apostrophe
-			valeur_numerique
-				apostrophe
-		guillemets
-			valeur_numerique
-				guillemets
-		etiquette
+		etiquette_signal
 			operator
-				etiquette
-		etiquette
-		etiquette
-			operator
-				apostrophe
-					valeur_numerique
-						apostrophe
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						etiquette
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						apostrophe
-							valeur_numerique
-								apostrophe
-		etiquette
-			operator
+				etiquette_signal
+					%fin
 				guillemets
 					valeur_numerique
 						guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
+							%fin
+				apostrophe
+					valeur_numerique
 						apostrophe
-							valeur_numerique
-								apostrophe
+							%fin
+			%fin
 		apostrophe
 			valeur_numerique
 				apostrophe
 					operator
+						etiquette_signal
+							%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
 						guillemets
 							valeur_numerique
 								guillemets
+									%fin
+					%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					operator
+						etiquette_signal
+							%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
+					%fin		
 	inferieur_ou_egal
-		apostrophe
-			valeur_numerique
-				apostrophe
-		guillemets
-			valeur_numerique
-				guillemets
-		etiquette
+		etiquette_signal
 			operator
-				etiquette
-		etiquette
-		etiquette
-			operator
-				apostrophe
-					valeur_numerique
-						apostrophe
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						etiquette
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						apostrophe
-							valeur_numerique
-								apostrophe
-		etiquette
-			operator
+				etiquette_signal
+					%fin
 				guillemets
 					valeur_numerique
 						guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
+							%fin
+				apostrophe
+					valeur_numerique
 						apostrophe
-							valeur_numerique
-								apostrophe
+							%fin
+			%fin
 		apostrophe
 			valeur_numerique
 				apostrophe
 					operator
+						etiquette_signal
+							%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
 						guillemets
 							valeur_numerique
 								guillemets
+									%fin
+					%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					operator
+						etiquette_signal
+							%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
+					%fin
 	superieur_ou_egal
-		apostrophe
-			valeur_numerique
-				apostrophe
-		guillemets
-			valeur_numerique
-				guillemets
-		etiquette
+		etiquette_signal
 			operator
-				etiquette
-		etiquette
-		etiquette
-			operator
-				apostrophe
-					valeur_numerique
-						apostrophe
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						etiquette
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						apostrophe
-							valeur_numerique
-								apostrophe
-		etiquette
-			operator
+				etiquette_signal
+					%fin
 				guillemets
 					valeur_numerique
 						guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
+							%fin
+				apostrophe
+					valeur_numerique
 						apostrophe
-							valeur_numerique
-								apostrophe
+							%fin
+			%fin
 		apostrophe
 			valeur_numerique
 				apostrophe
 					operator
+						etiquette_signal
+							%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
 						guillemets
 							valeur_numerique
 								guillemets
+									%fin
+					%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					operator
+						etiquette_signal
+							%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
+					%fin
 	inferieur
-		apostrophe
-			valeur_numerique
-				apostrophe
-		guillemets
-			valeur_numerique
-				guillemets
-		etiquette
+		etiquette_signal
 			operator
-				etiquette
-		etiquette
-		etiquette
-			operator
-				apostrophe
-					valeur_numerique
-						apostrophe
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						etiquette
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						apostrophe
-							valeur_numerique
-								apostrophe
-		etiquette
-			operator
+				etiquette_signal
+					%fin
 				guillemets
 					valeur_numerique
 						guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
+							%fin
+				apostrophe
+					valeur_numerique
 						apostrophe
-							valeur_numerique
-								apostrophe
+							%fin
+			%fin
 		apostrophe
 			valeur_numerique
 				apostrophe
 					operator
+						etiquette_signal
+							%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
 						guillemets
 							valeur_numerique
 								guillemets
+									%fin
+					%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					operator
+						etiquette_signal
+							%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
+					%fin
 	superieur
-		apostrophe
-			valeur_numerique
-				apostrophe
-		guillemets
-			valeur_numerique
-				guillemets
-		etiquette
+		etiquette_signal
 			operator
-				etiquette
-		etiquette
-		etiquette
-			operator
-				apostrophe
-					valeur_numerique
-						apostrophe
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						etiquette
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						apostrophe
-							valeur_numerique
-								apostrophe
-		etiquette
-			operator
+				etiquette_signal
+					%fin
 				guillemets
 					valeur_numerique
 						guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
+							%fin
+				apostrophe
+					valeur_numerique
 						apostrophe
-							valeur_numerique
-								apostrophe
+							%fin
+			%fin
 		apostrophe
 			valeur_numerique
 				apostrophe
 					operator
+						etiquette_signal
+							%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
 						guillemets
 							valeur_numerique
 								guillemets
+									%fin
+					%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					operator
+						etiquette_signal
+							%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
+					%fin
 	different
-		apostrophe
-			valeur_numerique
-				apostrophe
-		guillemets
-			valeur_numerique
-				guillemets
-		etiquette
+		etiquette_signal
 			operator
-				etiquette
-		etiquette
-		etiquette
-			operator
-				apostrophe
-					valeur_numerique
-						apostrophe
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						etiquette
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						apostrophe
-							valeur_numerique
-								apostrophe
-		etiquette
-			operator
+				etiquette_signal
+					%fin
 				guillemets
 					valeur_numerique
 						guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
+							%fin
+				apostrophe
+					valeur_numerique
 						apostrophe
-							valeur_numerique
-								apostrophe
+							%fin
+			%fin
 		apostrophe
 			valeur_numerique
 				apostrophe
 					operator
+						etiquette_signal
+							%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
 						guillemets
 							valeur_numerique
 								guillemets
+									%fin
+					%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					operator
+						etiquette_signal
+							%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									%fin
+					%fin

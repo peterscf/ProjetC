@@ -4,85 +4,126 @@ etiquette_signal
 			valeur_numerique
 				apostrophe
 					point_virgule
+						affectation_signal.tree
+							%fin
+						%fin
 					when.tree
+						%fin
 					when_parenthese.tree
-		guillemets
-			valeur_numerique
-				guillemets
-					point_virgule
-					when.tree
-					when_parenthese.tree
-		etiquette
-			point_virgule
-			when.tree
-			when_parenthese.tree
-		etiquette
-			operator
-				etiquette
-					point_virgule
-					when.tree
-					when_parenthese.tree
-		apostrophe
-			valeur_numerique
-				apostrophe
+						%fin
 					operator
-						etiquette
+						guillemets
+							valeur_numerique
+								guillemets
+									point_virgule
+										affectation_signal.tree
+											%fin
+										%fin
+									when.tree
+										%fin
+									when_parenthese.tree
+										%fin
+						etiquette_signal
 							point_virgule
+								affectation_signal.tree
+									%fin
+								%fin
 							when.tree
+								%fin
 							when_parenthese.tree
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
+								%fin
 						apostrophe
 							valeur_numerique
 								apostrophe
 									point_virgule
+										affectation_signal.tree
+											%fin
+										%fin
 									when.tree
+										%fin
 									when_parenthese.tree
-		etiquette
+										%fin
+		guillemets
+			valeur_numerique
+				guillemets
+					point_virgule
+						affectation_signal.tree
+							%fin
+						%fin
+					when.tree
+						%fin
+					when_parenthese.tree
+						%fin
+					operator
+						etiquette_signal
+							point_virgule
+								affectation_signal.tree
+									%fin
+								%fin
+							when.tree
+								%fin
+							when_parenthese.tree
+								%fin
+						guillemets
+							valeur_numerique
+								guillemets
+									point_virgule
+										affectation_signal.tree
+											%fin
+										%fin
+									when.tree
+										%fin
+									when_parenthese.tree
+										%fin
+						apostrophe
+							valeur_numerique
+								apostrophe
+									point_virgule
+										affectation_signal.tree
+											%fin
+										%fin
+									when.tree
+										%fin
+									when_parenthese.tree
+										%fin
+		etiquette_signal
+			point_virgule
+				affectation_signal.tree
+					%fin
+				%fin
+			when.tree
+				%fin
+			when_parenthese.tree
+				%fin
 			operator
+				etiquette_signal
+					point_virgule
+						affectation_signal.tree
+							%fin
+						%fin
+					when.tree
+						%fin
+					when_parenthese.tree
+						%fin
 				guillemets
 					valeur_numerique
 						guillemets
 							point_virgule
+								affectation_signal.tree
+									%fin
+								%fin
 							when.tree
+								%fin
 							when_parenthese.tree
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						etiquette
-							point_virgule
-							when.tree
-							when_parenthese.tree
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-									point_virgule
-									when.tree
-									when_parenthese.tree
-		guillemets
-			valeur_numerique
-				guillemets
-					operator
-						apostrophe
+								%fin
+				apostrophe
 							valeur_numerique
 								apostrophe
 									point_virgule
+										affectation_signal.tree
+											%fin
+										%fin
 									when.tree
+										%fin
 									when_parenthese.tree
-		apostrophe
-			valeur_numerique
-				apostrophe
-					operator
-						guillemets
-							valeur_numerique
-								guillemets
-									point_virgule
-									when.tree
-									when_parenthese.tree
+										%fin

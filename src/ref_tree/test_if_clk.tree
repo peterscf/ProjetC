@@ -8,8 +8,6 @@ if
 							apostrophe
 								valeur_numerique
 									apostrophe
-	
-	etiquette
 		egal
 			apostrophe
 				valeur_numerique
@@ -29,8 +27,7 @@ if
 									valeur_numerique
 										apostrophe
 											parenthese_fermee
-		
-		etiquette
+												%fin
 			egal
 				apostrophe
 					valeur_numerique
@@ -40,5 +37,6 @@ if
 									apostrophe
 										event
 										 parenthese_fermee
+										 	%fin
 	
 				

@@ -1,7 +1,8 @@
-%component
+component
 	etiquette
 		port.tree
 			end
 				component
 					point_virgule
+						%fin
 				

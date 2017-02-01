@@ -4,57 +4,67 @@ architecture
 			etiquette_entity
 				is
 					component.tree
+						declaration_signal.tree
 						begin
 							end
 								etiquette_architecture
 									point_virgule
-						assignement_signal.tree
-							end
-								etiquette_architecture
-									point_virgule
-						affectation_signal.tree
-							end
-								etiquette_architecture
-									point_virgule
-						port_map.tree
-							end
-								etiquette_architecture
-									point_virgule
-						process.tree
-							end
-								etiquette_architecture
-									point_virgule
-						affectation_signal.tree
-							end
-								etiquette_architecture
-									point_virgule
-						when.tree
-							end
-								etiquette_architecture
-									point_virgule
-					declaration_signal.tree
-						begin
+											%fin
 							assignement_signal.tree
 								end
 									etiquette_architecture
 										point_virgule
+												%fin
 							affectation_signal.tree
 								end
 									etiquette_architecture
 										point_virgule
+												%fin
 							port_map.tree
 								end
 									etiquette_architecture
 										point_virgule
+												%fin
 							process.tree
 								end
 									etiquette_architecture
 										point_virgule
+												%fin
 							affectation_signal.tree
 								end
 									etiquette_architecture
 										point_virgule
+												%fin
 							when.tree
 								end
 									etiquette_architecture
 										point_virgule
+												%fin
+					declaration_signal.tree
+						component.tree
+						begin
+							affectation_signal.tree
+								end
+									etiquette_architecture
+										point_virgule
+											%fin						
+							port_map.tree
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							process.tree
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							affectation_signal.tree
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							when.tree
+								end
+									etiquette_architecture
+										point_virgule
+											%fin

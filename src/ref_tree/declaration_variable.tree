@@ -1,9 +1,16 @@
-%type_variable
+type_variable
 	etiquette
 		deux_points
 			type
 				point_virgule
+					declaration_variable.tree
+						%fin
+					%fin
 			type_vector.tree
 				point_virgule
+				declaration_variable.tree
+					%fin
+				%fin
 		virgule
 				declaration_variable.tree
+					%fin

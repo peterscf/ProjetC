@@ -1,9 +1,16 @@
-%type_signal
+type_signal
 	etiquette
 		deux_points
 			type
 				point_virgule
+					declaration_signal.tree
+						%fin
+					%fin
 			type_vector.tree
 				point_virgule
+					declaration_signal.tree
+						%fin
+					%fin
 		virgule
 			declaration_signal.tree
+				%fin

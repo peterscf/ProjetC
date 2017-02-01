@@ -81,12 +81,12 @@ ref_tree::ref_tree(string File){
 			}
 			nb_line++;
 		}
-		cout<<"ref_tree ok"<<endl;
+		cout<<"ref_tree : "<< File <<" OK"<<endl;
 	}
 
     else
       {
-	cerr << "Impossible d'ouvrir le fichier pour cree l'arbre de ref !" << endl;
+	cerr << "Impossible d'ouvrir le fichier : "<< File <<" pour cree l'arbre de ref !" << endl;
       }
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -96,9 +96,7 @@ node* ref_tree::create_node(string str){
 	if(str.find('\r')!=string::npos){
 		str=str.substr(0,str.find('\r'));
 	}
-	else{
-		new_node = new node (str);
-	}
+	new_node = new node (str);
 	return new_node;
 }
 ///////////////////////////////////////////////////////////////////////////////
