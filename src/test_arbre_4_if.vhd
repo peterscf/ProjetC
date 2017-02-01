@@ -3,11 +3,7 @@ use IEEE.std_logic_1164.ALL ;
 use ieee.numeric_std.all;
 
 entity ALU is
-	port(	A		: in STD_LOGIC ;
-		CMD		: in STD_LOGIC;
-		Zero		: out std_logic; 
-		S		: out STD_LOGIC ;
-		rst 	:in STD_LOGIC;);
+	port(	A		: in STD_LOGIC ;);
 end ALU;
 
 architecture A of ALU is

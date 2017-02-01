@@ -5,6 +5,7 @@ entity
 				point_virgule
 				etiquette_entity
 					point_virgule
+						%fin
 			generic
 				parenthese_ouverte
 					etiquette
@@ -16,15 +17,18 @@ entity
 											point_virgule
 											etiquette_entity
 												point_virgule
+													%fin
 							type
 								parenthese_fermee
 									point_virgule
 										end
 											point_virgule
 											etiquette_entity
-												point_virgule					
+												point_virgule
+													%fin					
 			port.tree
 				end
 					point_virgule
 					etiquette_entity
 						point_virgule
+							%fin

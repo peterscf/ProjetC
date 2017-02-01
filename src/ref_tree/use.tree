@@ -5,5 +5,7 @@ use
 				point
 					all
 						point_virgule
+							%fin
 					etiquette
 						point_virgule
+							%fin

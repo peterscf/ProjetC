@@ -4,10 +4,13 @@
 #include<iostream>
 #include<fstream>
 #include <vector>
+#include <stack>
+
 
 #include"lexem.h"
 #include"node.h"
 #include"ref_tree.h"
+#include"Analyse_gramaticale.h"
 
 using namespace std;
 ///////////////////////////////////////////////////////////////////////
@@ -16,20 +19,18 @@ using namespace std;
 void Analyse_gramaticale(vector <lexem*> Lx_vector){
 
 	node* node_courant=NULL;
-	node* node_precedant=NULL;
+	stack<node*> node_precedant;
 	vector < lexem* >::iterator itr_lex;
 	string path="./ref_tree/";
 	
 	ref_tree library_tree("./ref_tree/library_use.tree");
 	ref_tree use_tree("./ref_tree/use.tree");
 	ref_tree entity_tree("./ref_tree/entity.tree");
-	ref_tree architecture_tree("./ref_tree/architecture.tree");
+	//ref_tree architecture_tree("./ref_tree/architecture.tree");
 	ref_tree component_tree("./ref_tree/component.tree");
-	ref_tree declaration_port_tree("./ref_tree/declaration_port.tree");
 	ref_tree expression_tree("./ref_tree/expression.tree");
-	ref_tree port_tree("./ref_tree/port.tree");
 	ref_tree type_vector_tree("./ref_tree/type_vector.tree");
-	ref_tree if_tree("./ref_tree/if.tree");
+	//ref_tree if_tree("./ref_tree/if.tree");
 	
 	string position_lex;
 	
@@ -51,72 +52,48 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 			
 			
 		//traitement du pointeur quand il ya un lien dans l'arbre de ref
-		if((((*node_courant)).get_value()).find(".")!=string::npos){
 		
-			if((*(*itr_lex)).get_type() == "port" && position_lex == "entity"){
-				//pointer sur port_tree
-				node_courant = port_tree.get_root();
-				position_lex="port";
-			}
-			else if ((*(*itr_lex)).get_type() == "etiquette" && (position_lex == "port" || position_lex == "decl_port")){
-				if (position_lex=="port"){
-					node_precedant=node_courant ;
-				}
-				position_lex == "decl_port";			
-				node_courant = declaration_port_tree.get_root();
-			
-			}
-			else if((*(*itr_lex)).get_type() == "type_signal" && position_lex == "architecture"){
-				//pointer sur signal_tree
-				//node_courant = signal_tree();
-				position_lex="signal";
-			}
-			else if((*(*itr_lex)).get_type() == "variable" && position_lex == "process"){
-				//pointer sur veriable_tree
-				//node_courant = RefTree.get_variable_tree();
-				position_lex="variable";
-			}
-			else if((*(*itr_lex)).get_type() == "if" && position_lex == "process"){
-				//pointer sur if_tree
-				node_courant = if_tree.get_root();
-				position_lex="if";
-			}
-			else if((*(*itr_lex)).get_type() == "case" && position_lex == "process"){
-				//pointer sur case_tree
-				//node_courant = RefTree.get_case_tree();
-				position_lex="case";
-			}
-		}
 		
-		else if((*(*itr_lex)).get_type() == "architecture"){
+		if((*(*itr_lex)).get_type() == "architecture"){
 			//pointer sur architecture_tree
-			node_courant = architecture_tree.get_root();
+			//node_courant = architecture_tree.get_root();
+			node_precedant.push(node_courant);
 			position_lex="architecture";
 		}
 		else if((*(*itr_lex)).get_type() == "entity"){
 			//pointer sur port_tree
 			node_courant = entity_tree.get_root();
+			node_precedant.push(node_courant);
 			position_lex="entity";
 		}
 		else if((*(*itr_lex)).get_type() == "use"){
 			//pointer sur port_tree
 			node_courant = use_tree.get_root();
+			node_precedant.push(node_courant);
 			position_lex="use";
 		}
 		else if((*(*itr_lex)).get_type() == "library"){
 			//pointer sur library_tree
 			node_courant = library_tree.get_root();
+			node_precedant.push(node_courant);
 			position_lex="library";
 		} 
 		
+		else if((node_courant->get_value()).find(".")!=string::npos){
+			node_precedant.push(node_courant);
+			node_courant = lien_vers_sous_arbre(node_courant,node_precedant);
+		}
+		
 		/////////////////////////////////////////////////////////
 		//test gramaticale
-		if (node_courant->get_value() == "\%fin"){
+		if (node_courant->get_value() == "%fin"){
 						//node_precedant = node_precedant->get_child();
-						
-						node_courant= node_precedant->get_child();
+						node_courant= node_precedant.top()->get_child();
+						node_precedant.pop();
 						cout<<"/!\\node precedant : "<< node_courant->get_value()<<endl;
 		}
+		
+		
 		if ((*(*itr_lex)).get_type() == node_courant->get_value()){
 			cout<<"node comparaison : "<< node_courant->get_value()<<endl;
 			if((*(*itr_lex)).get_type()=="etiquette"){
@@ -127,10 +104,24 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 		}
 		else{ //node courant ne correspond pas au lexem
 			while(node_courant != NULL){ //test si c'est un des frere ?
+				
+				if (node_courant->get_value() == "%fin"){
+						node_courant = (node_precedant.top())->get_child();
+						node_precedant.pop();
+						cout<<"/!\\node precedant dans while: "<< node_courant->get_value()<<endl;
+				}
+				
 				if ((*(*itr_lex)).get_type() == node_courant->get_value()){
 					cout<<"node comparaison : "<< node_courant->get_value()<<endl;
 					node_courant = node_courant->get_child();
 					break;
+				}
+				
+				else if((node_courant->get_value()).find(".")!=string::npos){
+					node_precedant.push(node_courant);
+					node_courant = lien_vers_sous_arbre(node_courant,node_precedant);
+					
+				
 				}
 				else{
 					node_courant = node_courant->get_bros();
@@ -141,15 +132,49 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 					//break;//kill programme
 			}
 		}
-		if (node_courant->get_value() == "fin_tree"){
-			node_courant= node_precedant->get_child();
-			cout<<"/!\\node precedant : "<< node_courant->get_value()<<endl;
-		}
 	}
 }
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
+//lien vers sous arbre
+node * lien_vers_sous_arbre(node* link, stack<node*> stck){
 
+ref_tree declaration_port_tree("./ref_tree/declaration_port.tree");		
+ref_tree port_tree("./ref_tree/port.tree");
+
+			if(link->get_value() =="port.tree" ){
+				stck.push(link);
+				link = port_tree.get_root();
+			}
+			else if(link->get_value() =="declaration_port.tree" ){
+				stck.push(link);
+				link = declaration_port_tree.get_root();
+			}
+/*			else if (link->get_value() ==" "){
+				//position_lex == "decl_port";			
+				node_courant = declaration_port_tree.get_root();
+			
+			}
+			else if(link->get_value() ==" " ){
+				//pointer sur signal_tree
+
+			}
+			else if(link->get_value() ==" " ){
+				//pointer sur veriable_tree
+			}
+			else if(link->get_value() ==" " ){
+				//pointer sur if_tree
+
+			}
+			else if(link->get_value() ==" " ){
+				//pointer sur case_tree
+
+			}*/
+			else{
+				link =NULL;
+			}
+			return link;
+		}
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 //Fin du programme

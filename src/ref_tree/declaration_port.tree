@@ -3,7 +3,7 @@ etiquette
 		sens
 			type
 				point_virgule
+					%fin
 			type_vector.tree
 				point_virgule
 					%fin
-	
