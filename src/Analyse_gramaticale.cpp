@@ -50,7 +50,7 @@ ref_tree when_tree("./ref_tree/when.tree");
 ref_tree when_parenthese_tree_txt("./ref_tree/when_parenthese.tree");
 ref_tree when_case_tree("./ref_tree/when_case.tree");
 
-string position_lex;
+stack<string> position_lex;
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -93,25 +93,25 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 			//pointer sur architecture_tree
 			node_courant = architecture_tree.get_root();
 			node_precedant.push(node_courant);
-			position_lex="architecture";
+			position_lex.push("architecture");
 		}
 		else if((*(*itr_lex)).get_type() == "entity"){
 			//pointer sur entity_tree
 			node_courant = entity_tree.get_root();
 			node_precedant.push(node_courant);
-			position_lex="entity";
+			position_lex.push("entity");
 		}
 		else if((*(*itr_lex)).get_type() == "use"){
 			//pointer sur use_tree
 			node_courant = use_tree.get_root();
 			node_precedant.push(node_courant);
-			position_lex="use";
+			position_lex.push("use");
 		}
 		else if((*(*itr_lex)).get_type() == "library"){
 			//pointer sur library_tree
 			node_courant = library_tree.get_root();
 			node_precedant.push(node_courant);
-			position_lex="library";
+			position_lex.push("library");
 		} 
 		
 		else if((node_courant->get_value()).find(".")!=string::npos){
@@ -124,6 +124,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 		if (node_courant->get_value() == "%fin"){
 						node_courant= node_precedant.top()->get_child();
 						node_precedant.pop();
+						position_lex.pop();
 						///////////////////
 						if(debug){cout<<"/!\\node precedant : "<< node_courant->get_value()<<endl;}
 						///////////////////
@@ -136,7 +137,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 		///////////////////
 			if((*(*itr_lex)).get_type()=="etiquette" ){//etiquette 
 			
-				if (position_lex == "port"){ //si on est dans port 
+				if (position_lex.top() == "port"){ //si on est dans port 
 					(*(*itr_lex)).set_type("etiquette_signal");
 					///////////////////
 					if(debug){(*(*itr_lex)).affiche_lexem();}
@@ -144,7 +145,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 				}
 				
 				else{//sinon on renome les etiquette par leur position
-					(*(*itr_lex)).set_type("etiquette_"+position_lex);
+					(*(*itr_lex)).set_type("etiquette_"+(position_lex.top()));
 					///////////////////
 					if(debug){(*(*itr_lex)).affiche_lexem();}
 					///////////////////				
@@ -165,6 +166,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 							node_courant = (node_precedant.top())->get_bros();
 						}
 						node_precedant.pop();
+						position_lex.pop();
 						///////////////////
 						if(debug){cout<<"/!\\node precedant dans while: "<< node_courant->get_value()<<endl;}
 						///////////////////
@@ -190,6 +192,11 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 						///////////////////
 						node_courant = (node_precedant.top())->get_bros();
 						node_precedant.pop();
+						position_lex.pop();
+						if (node_courant == NULL){
+							cout <<"erreur de syntaxe : "<<(*(*itr_lex)).get_nom()<<endl<< "ligne "<<(*(*itr_lex)).get_line_pos()<<endl;
+							exit(1);//kill programme
+						}
 						///////////////////
 						if(debug){cout<<"/!\\node courant dans if: "<< node_courant->get_value()<<endl;}
 						///////////////////
@@ -217,79 +224,98 @@ node * lien_vers_sous_arbre(node* link){
 
 			if(link->get_value() =="port.tree" ){
 				link = port_tree.get_root();
-				position_lex="port";
+				position_lex.push("port");
 			}
 			else if(link->get_value() =="declaration_port.tree" ){
-				position_lex="port";
+				position_lex.push("port");
 				link = declaration_port_tree.get_root();
 			}
 			else if (link->get_value() =="declaration_signal.tree"){
-				position_lex="signal";			
+				position_lex.push("signal");			
 				link = declaration_signal_tree.get_root();
 			
 			}
 			else if(link->get_value() =="type_vector.tree" ){
 				//pointer sur signal_tree
-				link = type_vector_tree.get_root();	
+				link = type_vector_tree.get_root();
+				position_lex.push("signal");	
+				
 			}
 			else if(link->get_value() =="component.tree" ){
 				//pointer sur veriable_tree
 				link = component_tree.get_root();
-				position_lex="component";
+				position_lex.push("component");
 			}
 			else if ( link->get_value() == "affectation_signal.tree" ){
 			 link= affectation_signal_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "affectation_variable.tree" ){
 			 link= affectation_variable_tree.get_root();
+			 position_lex.push("variable");
 			}
 			else if ( link->get_value() == "assignement_signal.tree" ){
 			 link= assignement_signal_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "concurent.tree" ){
 			 link= (concurent_tree.get_root())->get_child();
+			 position_lex.push("concurent");
 			}
 			else if ( link->get_value() == "case.tree" ){
 			 link= case_tree.get_root();
 			}
 			else if ( link->get_value() == "declaration_variable.tree" ){
 			 link= declaration_variable_tree.get_root();
+			 position_lex.push("variable");
 			}
 			else if ( link->get_value() == "if.tree" ){
 			 link= if_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "else.tree" ){
 			 link= else_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "elsif.tree" ){
 			 link= elsif_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "port_map.tree" ){
 			 link= port_map_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "process.tree" ){
 			 link= process_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "liste_de_sensib.tree" ){
 			 link= liste_de_sensib_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "test_if.tree" ){
 			 link= test_if_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "test_if_clk.tree" ){
 			 link= test_if_clk_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "test_if_parenthese.tree" ){
 			 link= test_if_parenthese_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "when.tree" ){
 			 link= when_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "when_parenthese.tree" ){
 			 link= when_parenthese_tree_txt.get_root();
+			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "when_case.tree" ){
 			 link= when_case_tree.get_root();
+			 position_lex.push("signal");
 			}
 			else{
 				link =NULL;
