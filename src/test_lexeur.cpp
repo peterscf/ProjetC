@@ -24,9 +24,9 @@ string file ="./test_file_vhd/arbiter.vhd";
 
 vector < lexem* > Lx ; //CREATION DU VECTEUR
 
-Lx = lexeur(file);//Lexeur
+Lx = lexeur(file);//Appel du lexeur
 
-Analyse_lexical (Lx);
+Analyse_lexical (Lx); //Analyse lexicale sur le vecteur qui contient les lexèmes
 
-affichage_vector(Lx);//affichage de chaque lexems du lexeur
+affichage_vector(Lx);//affichage de chaque lexemes du lexeur
 }

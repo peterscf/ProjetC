@@ -14,8 +14,8 @@
 
 using namespace std;
 
-bool test_caractere_special (char c);
-void affichage_vector(vector < lexem* > myLx);
-vector <lexem* > lexeur(string file_name);
+bool test_caractere_special (char c); //fonction qui gere cherche la presence des caractere spéciaux simples (;()[]+-*.\",!&)
+void affichage_vector(vector < lexem* > myLx); //fonction qui permet l'affiche du vector dans lequel sont places tous les lexemes
+vector <lexem* > lexeur(string file_name); //fonction lexeur
 
 #endif
