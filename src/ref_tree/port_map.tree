@@ -1,23 +1,26 @@
 etiquette
 	deux_points
-		etiquette
+		etiquette_component
 			port
 				map
 					parenthese_ouverte
-						etiquette
+						etiquette_signal
 							assignement
-								etiquette
+								etiquette_signal
 									parenthese_fermee
 										point_virgule
 									virgule
-										etiquette
+										etiquette_signal
 											assignement
-												etiquette
+												etiquette_signal
 													parenthese_fermee
 														point_virgule
+															%fin
 						parenthese_fermee
 							point_virgule
+								%fin
 						virgule
-							etiquette
+							etiquette_signal
 								parenthese_fermee
 									point_virgule
+										%fin

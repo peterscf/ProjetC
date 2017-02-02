@@ -14,7 +14,7 @@ entity FILTER is
         DAC_csb      : out std_logic;
         LDACb        : out std_logic;
         CLRB         : out std_logic;
-        Filter_Out  : out std_logic_vector(7 downto 0)) ;
+        Filter_Out  : out std_logic_vector(7 downto 0);) ;
 end FILTER;
 
 architecture A of FILTER is
@@ -24,7 +24,7 @@ architecture A of FILTER is
                 Accu_ctrl : in  std_logic;
                 CLK       : in  std_logic;
                 RESET     : in  std_logic;
-                Accu_out  : out std_logic_vector(20 downto 0)) ;
+                Accu_out  : out std_logic_vector(20 downto 0);) ;
   end component;
 
   component BUFF
@@ -32,7 +32,7 @@ architecture A of FILTER is
                 Buff_OE  : in  std_logic;
                 CLK      : in  std_logic;
                 Reset    : in  std_logic;
-                Buff_Out : out std_logic_vector(7 downto 0)) ;
+                Buff_Out : out std_logic_vector(7 downto 0;);
   end component;
 
   component FSM
@@ -50,13 +50,13 @@ architecture A of FILTER is
                 Delay_Line_Address      : out std_logic_vector(4 downto 0);
                 Delay_Line_sample_shift : out std_logic;
                 Accu_ctrl               : out std_logic;
-                Buff_OE                 : out std_logic) ;
+                Buff_OE                 : out std_logic;) ;
   end component;
 
   component MULT
     port(Mult_in_A        : in  std_logic_vector(7 downto 0);
                 Mult_in_B : in  std_logic_vector(7 downto 0);
-                Mult_out  : out std_logic_vector(15 downto 0)) ;
+                Mult_out  : out std_logic_vector(15 downto 0);) ;
   end component;
 
   component DELAY_LINE
@@ -65,18 +65,18 @@ architecture A of FILTER is
                 Delay_Line_sample_shift : in  std_logic;
                 RESET                   : in  std_logic;
                 CLK                     : in  std_logic;
-                Delay_Line_out          : out std_logic_vector(7 downto 0)) ;
+                Delay_Line_out          : out std_logic_vector(7 downto 0);) ;
   end component;
 
   component ROM
     port(Rom_Address    : in  std_logic_vector(4 downto 0);
-                Rom_out : out std_logic_vector(7 downto 0)) ;
+                Rom_out : out std_logic_vector(7 downto 0);) ;
   end component;
 
   component shift_register 
    port(clk, reset : in std_logic;
 	shift_in : in std_logic;
-	shift_out : out std_logic);
+	shift_out : out std_logic;);
   end component;
  
   signal Delay_Line_sample_shift : std_logic;

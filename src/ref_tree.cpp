@@ -81,7 +81,7 @@ ref_tree::ref_tree(string File){
 			}
 			nb_line++;
 		}
-		cout<<"ref_tree : "<< File <<" OK"<<endl;
+		//cout<<"ref_tree : "<< File <<" OK"<<endl;
 	}
 
     else
