@@ -24,13 +24,19 @@ vector <lexem* > lexeur( string file_name)
       string mot_temp;
 			lexem* lex_temp;
       stringstream ss;
+			int index_line = 1;
       bool caractere_valid = true;
       while (fichier.get (caractere))
 	{
 	  caractere = tolower (caractere);	//tout en minuscule
+
 	  if ((caractere == ' ') || (caractere == '\t') || (caractere == '\n'))	//identifie separateur
 	    {
 	      mot = ss.str ();	//met le flux dans mot
+					if (caractere =='\n'){
+			index_line = index_line +1;
+			}
+			//cout << index_line ;
 	      if (mot.find ("--") <= mot.length ()) //recerche commentaires
 		{
 		  caractere_valid = false;
@@ -38,7 +44,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("--")));
 		  if (!mot_temp.empty ())
 		    {
-					lex_temp = new lexem (mot_temp);
+					lex_temp = new lexem (mot_temp, index_line);
 		      Lx.push_back (lex_temp);
 		    }
 		  mot_temp.erase (mot_temp.begin (), mot_temp.end ());
@@ -50,7 +56,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("-")));
 		  if (!mot_temp.empty ())
 		    {
-		      	lex_temp = new lexem (mot_temp);
+		      	lex_temp = new lexem (mot_temp, index_line);
 						Lx.push_back (lex_temp);
 		    }
 
@@ -58,7 +64,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot[(mot.find ("-"))];
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -70,7 +76,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find ("-"))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);	
+		      lex_temp = new lexem (mot_temp, index_line);	
       Lx.push_back (lex_temp);
 		    }
 
@@ -83,7 +89,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("<=")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);	
+		      lex_temp = new lexem (mot_temp, index_line);	
       Lx.push_back (lex_temp);
 		    }
 
@@ -92,7 +98,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot_temp.substr ((mot_temp.find ("<=")), 2);
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);	
+		      lex_temp = new lexem (mot_temp, index_line);	
       Lx.push_back (lex_temp);
 		    }
 
@@ -104,7 +110,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find ("<="))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -117,7 +123,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find (">=")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -126,7 +132,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot_temp.substr ((mot_temp.find (">=")), 2);
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -138,7 +144,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find (">="))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -150,7 +156,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("=>")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -159,7 +165,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot_temp.substr ((mot_temp.find ("=>")), 2);
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
       Lx.push_back (lex_temp);
 		    }
 
@@ -171,7 +177,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find ("=>"))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -183,7 +189,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("\\=")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -192,7 +198,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot_temp.substr ((mot_temp.find ("\\=")), 2);
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -204,7 +210,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find ("\\="))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
       Lx.push_back (lex_temp);
 		    }
 
@@ -217,7 +223,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find (":=")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -226,7 +232,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot_temp.substr ((mot_temp.find (":=")), 2);
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -238,7 +244,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find (":="))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -252,7 +258,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("<")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -260,7 +266,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot[(mot.find ("<"))];
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -272,7 +278,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find ("<"))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
       Lx.push_back (lex_temp);
 		    }
 
@@ -285,7 +291,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find (">")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -293,7 +299,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot[(mot.find (">"))];
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -305,7 +311,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find (">"))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -318,7 +324,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find (":")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -326,7 +332,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot[(mot.find (":"))];
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);	
+		      lex_temp = new lexem (mot_temp, index_line);	
       Lx.push_back (lex_temp);
 		    }
 
@@ -338,7 +344,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find (":"))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);	
+		      lex_temp = new lexem (mot_temp, index_line);	
       Lx.push_back (lex_temp);
 		    }
 
@@ -351,7 +357,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp.resize ((mot.find ("=")));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -359,7 +365,7 @@ vector <lexem* > lexeur( string file_name)
 		  mot_temp = mot[(mot.find ("="))];
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);	
+		      lex_temp = new lexem (mot_temp, index_line);	
       Lx.push_back (lex_temp);
 		    }
 
@@ -371,7 +377,7 @@ vector <lexem* > lexeur( string file_name)
 				      (mot_temp.find ("="))));
 		  if (!mot_temp.empty ())
 		    {
-		      lex_temp = new lexem (mot_temp);
+		      lex_temp = new lexem (mot_temp, index_line);
 	      Lx.push_back (lex_temp);
 		    }
 
@@ -382,7 +388,7 @@ vector <lexem* > lexeur( string file_name)
 		{
 		  if (!mot.empty ())
 		    {
-					lex_temp = new lexem (mot);
+					lex_temp = new lexem (mot, index_line);
 		      Lx.push_back (lex_temp);
 		    }
 		  //met "mot" dans la liste
@@ -400,7 +406,7 @@ vector <lexem* > lexeur( string file_name)
 	      mot = ss.str ();	//met le flux dans mot
 	      if (!mot.empty ())
 		{
-		  lex_temp = new lexem (mot);
+		  lex_temp = new lexem (mot, index_line);
 		      Lx.push_back (lex_temp);
 		}
 	      mot.erase (mot.begin (), mot.end ());	//clot le lexeme et passe a un nouveau
@@ -411,7 +417,7 @@ vector <lexem* > lexeur( string file_name)
 
 	      if (!mot.empty ())
 		{
-		  lex_temp = new lexem (mot);
+		  lex_temp = new lexem (mot, index_line);
 		      Lx.push_back (lex_temp);
 		}		//met "mot" dans la liste
 
@@ -434,6 +440,7 @@ vector <lexem* > lexeur( string file_name)
 
 
     }
+	
 
   else				// sinon
     cerr << "Impossible d'ouvrir le fichier !" << endl;

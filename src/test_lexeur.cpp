@@ -8,6 +8,7 @@
 #include "lexeur.h"
 #include "Dictionnaire.h"
 #include "Analyse_lexical.h"
+#include "lexeur.cpp"
 
 using namespace std;
 
