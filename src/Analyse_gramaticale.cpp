@@ -71,7 +71,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 		if(debug){(*(*itr_lex)).affiche_lexem();}
 		///////////////////
 		//test si etiquette existe deja !
-		if((*(*itr_lex)).get_type()=="etiquette" /*&& position_lex!= "port"*/ ){
+		if((*(*itr_lex)).get_type()=="etiquette" && position_lex.top() != "port" ){
 				//test si le lexem etiquette existe !
 				for (vector < lexem* >::iterator itr2 = Lx_vector.begin(); itr2 != itr_lex; ++itr2){
 					if((*(*itr_lex)).get_nom()==(*(*itr2)).get_nom() && (*(*itr2)).get_type() != "etiquette"){
@@ -290,7 +290,7 @@ node * lien_vers_sous_arbre(node* link){
 			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "liste_de_sensib.tree" ){
-			 link= liste_de_sensib_tree.get_root();
+			 link= (liste_de_sensib_tree.get_root())->get_child();
 			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "test_if.tree" ){

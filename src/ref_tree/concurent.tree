@@ -1,8 +1,4 @@
 nop
-	assignement_signal.tree
-		concurent.tree
-			%fin
-		%fin
 	affectation_signal.tree
 		concurent.tree
 			%fin
@@ -11,12 +7,20 @@ nop
 		concurent.tree
 			%fin
 		%fin
-	port_map.tree
-		concurent.tree
+	etiquette
+		port_map.tree
+			concurent.tree
+				%fin
 			%fin
-		%fin
+		assignement_signal.tree
+			concurent.tree
+				%fin
+			%fin
+		process.tree
+			concurent.tree
+				%fin
+			%fin
 	when.tree
-		concurent.tree
+			concurent.tree
+				%fin
 			%fin
-		%fin
-	%fin

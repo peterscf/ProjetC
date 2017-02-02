@@ -8,9 +8,33 @@ when
 							apostrophe
 								valeur_numerique
 									apostrophe
+										point_virgule
+											when_case.tree
+												%fin
+											%fin
 							guillemets
 								valeur_numerique
 									guillemets
+										point_virgule
+											when_case.tree
+												%fin
+											%fin
+					etiquette_signal
+						inferieur_ou_egal
+							apostrophe
+								valeur_numerique
+									apostrophe
+										point_virgule
+											when_case.tree
+												%fin
+											%fin
+							guillemets
+								valeur_numerique
+									guillemets
+										point_virgule
+											when_case.tree
+												%fin
+											%fin					
 	guillemets
 		valeur_numerique
 			guillemets
@@ -20,6 +44,30 @@ when
 							apostrophe
 								valeur_numerique
 									apostrophe
+										point_virgule
+											when_case.tree
+												%fin
+											%fin
 							guillemets
 								valeur_numerique
 									guillemets
+										point_virgule
+											when_case.tree
+												%fin
+											%fin
+					etiquette_signal
+						inferieur_ou_egal
+							apostrophe
+								valeur_numerique
+									apostrophe
+										point_virgule
+											when_case.tree
+												%fin
+											%fin
+							guillemets
+								valeur_numerique
+									guillemets
+										point_virgule
+											when_case.tree
+												%fin
+											%fin

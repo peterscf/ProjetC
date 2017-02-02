@@ -1,8 +1,10 @@
 component
-	etiquette_component
+	etiquette
 		port.tree
 			end
 				component
 					point_virgule
+						component.tree
+							%fin
 						%fin
 				

@@ -29,6 +29,7 @@ variable%type_variable
 bit%type
 downto
 upto
+to
 #########################
 #architecture
 #########################

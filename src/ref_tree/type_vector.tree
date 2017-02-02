@@ -9,3 +9,7 @@ type_vector
 				valeur_numerique
 					parenthese_fermee
 						%fin
+			to
+				valeur_numerique
+					parenthese_fermee
+						%fin

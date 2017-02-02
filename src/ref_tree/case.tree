@@ -2,11 +2,24 @@ case
 	etiquette
 		is
 			when_case.tree
-				point_virgule
 					end
 						case
-							point_virgule	
+							point_virgule
+								%fin
+	parenthese_ouverte
+		etiquette
+			parenthese_fermee
+				is
 					when_case.tree
-						end
-							case
-								point_virgule		
+							end
+								case
+									point_virgule
+										%fin
+		etiquette_signal
+			parenthese_fermee
+				is
+					when_case.tree
+							end
+								case
+									point_virgule
+										%fin		

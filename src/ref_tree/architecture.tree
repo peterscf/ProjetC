@@ -3,6 +3,16 @@ architecture
 		of
 			etiquette_entity
 				is
+					begin
+						concurent.tree
+							end
+								etiquette_architecture
+									point_virgule
+										%fin
+						end
+							etiquette_architecture
+								point_virgule
+									%fin
 					declaration_signal.tree
 						component.tree
 							begin

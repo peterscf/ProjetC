@@ -1,26 +1,30 @@
-etiquette
-	deux_points
-		etiquette_component
-			port
-				map
-					parenthese_ouverte
-						etiquette_signal
-							assignement
-								etiquette_signal
-									parenthese_fermee
-										point_virgule
-									virgule
-										etiquette_signal
-											assignement
-												etiquette_signal
-													parenthese_fermee
-														point_virgule
-															%fin
-						parenthese_fermee
-							point_virgule
-								%fin
-						virgule
+deux_points
+	etiquette_component
+		port
+			map
+				parenthese_ouverte
+					etiquette_signal
+						assignement
 							etiquette_signal
 								parenthese_fermee
 									point_virgule
+								virgule
+									etiquette_signal
+										assignement
+											etiquette_signal
+												parenthese_fermee
+													point_virgule
+														%fin
+						virgule
+							liste_de_sensib.tree
+								parenthese_fermee
+									point_virgule
 										%fin
+					parenthese_fermee
+						point_virgule
+							%fin
+					virgule
+						etiquette_signal
+							parenthese_fermee
+								point_virgule
+									%fin

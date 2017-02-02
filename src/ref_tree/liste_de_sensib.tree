@@ -1,5 +1,11 @@
-etiquette_signal
-	virgule
-		liste_de_sensib.tree
-			%fin
-	%fin
+%nop	
+	etiquette_signal
+		virgule
+			liste_de_sensib.tree
+				%fin
+		%fin
+	etiquette
+		virgule
+			liste_de_sensib.tree
+				%fin
+		%fin
