@@ -411,10 +411,10 @@ vector < lexem * > lexeur (string file_name) //description de la fonction lexeur
     }
 
 
-  else				// sinon
+  else{				// sinon
     cerr << "Impossible d'ouvrir le fichier !" << endl;
   	exit(1); //kill
-
+	}
   return Lx; //fa fonction lexeur retourne un vecteur qui est un arbre a une branche que represente le fichier en entree
 
 }

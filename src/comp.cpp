@@ -3,7 +3,7 @@
 #include<string>
 #include<iostream>
 #include<fstream>
-
+#include<vector>
 #include "Analyse_lexical.h"
 #include "Analyse_gramaticale.h"
 
@@ -13,18 +13,16 @@ int main (int argc, char *argv[])
 
 
 vector < lexem* > Lx ; //CREATION DU VECTEUR
-string file;
+string file=argv[2];
 string opt=argv[1];
 bool debug=false;
 
 		if(argc == 3){
 			if(opt == "-d"){
-				file = argv[2];
-				cout<<"fichier: "<<file<<endl;
 				debug=true;
 			}
 		}
-		if(argc == 2){
+		else if(argc == 2){
 				file = argv[1];
 		}
 		else if(argc > 4){
