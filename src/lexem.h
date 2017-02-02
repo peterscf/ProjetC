@@ -32,7 +32,7 @@ private:
 ////////////////////////////////////////////////////////////////////////////////////
 public:
 //Conctructeur
-	lexem(string nom, string type="unknow", int l_pos=0, int c_pos=0){
+	lexem(string nom, int l_pos=0, string type="unknow", int c_pos=0){
 		my_nom=nom;
 		my_type=type;
 		my_l_pos=l_pos;
@@ -72,7 +72,8 @@ public:
 	void affiche_lexem(){
 		cout << "---------------------"<<endl;
 		cout 	<< "Nom: " << get_nom() << endl
-			<<  "Type: " << get_type()<< endl;
+			<<  "Type: " << get_type()<< endl
+			<< "Ligne: " << get_line_pos() << endl;
 }
 
 
