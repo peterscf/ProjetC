@@ -1,104 +1,127 @@
 when
-	etiquette
+	etiquette_signal
 		egal
 			apostrophe
 				valeur_numerique
 					apostrophe
 						point_virgule
+							%fin
 						else
 							apostrophe
 								valeur_numerique
 									apostrophe
 										point_virgule
+											%fin
 							guillemets
 								valeur_numerique
 									guillemets
 										point_virgule
-							etiquette
+											%fin
+							etiquette_signal
 								point_virgule
-							etiquette
+									%fin
+							etiquette_signal
 								operator
-									etiquette
+									etiquette_signal
 										point_virgule
+											%fin
 							parenthese_ouverte	
-								etiquette
+								etiquette_signal
 									operator
-										etiquette
+										etiquette_signal
 											parenthese_fermee
 												point_virgule
+													%fin
 			guillemets
 				valeur_numerique
 					guillemets
 						point_virgule
+							%fin
 						else
 							guillemets
 								valeur_numerique
 									guillemets
 										point_virgule
+											%fin
 							apostrophe
 								valeur_numerique
 									apostrophe
 										point_virgule
-							etiquette
+											%fin
+							etiquette_signal
 								point_virgule
-							etiquette
+									%fin
+							etiquette_signal
 								operator
-									etiquette
+									etiquette_signal
 										point_virgule
+											%fin
 							parenthese_ouverte	
-								etiquette
+								etiquette_signal
 									operator
-										etiquette
+										etiquette_signal
 											parenthese_fermee
 												point_virgule
-			etiquette	
+													%fin
+			etiquette_signal	
 				point_virgule
+					%fin
 				else
 					apostrophe
 						valeur_numerique
 							apostrophe
 								point_virgule
+									%fin
 					guillemets
 						valeur_numerique
 							guillemets
 								point_virgule
-					etiquette
+									%fin
+					etiquette_signal
 						point_virgule
-					etiquette
+							%fin
+					etiquette_signal
 						operator
-							etiquette
+							etiquette_signal
 								point_virgule
+									%fin
 					parenthese_ouverte	
-								etiquette
+								etiquette_signal
 									operator
-										etiquette
+										etiquette_signal
 											parenthese_fermee
 												point_virgule
-			etiquette
+													%fin
 				operator
-					etiquette
+					etiquette_signal
 						point_virgule
+							%fin
 						else
 							apostrophe
 								valeur_numerique
 									apostrophe
 										point_virgule
+											%fin
 							guillemets
 								valeur_numerique
 									guillemets
 										point_virgule
-							etiquette
+											%fin
+							etiquette_signal
 								point_virgule
-							etiquette
+									%fin
+							etiquette_signal
 								operator
-									etiquette
+									etiquette_signal
 										point_virgule
+											%fin
 							parenthese_ouverte	
-								etiquette
+								etiquette_signal
 									operator
-										etiquette
+										etiquette_signal
 											parenthese_fermee
 												point_virgule
+													%fin
 		parenthese_ouverte
 			valeur_numerique
 				downto
@@ -109,97 +132,120 @@ when
 									valeur_numerique
 										guillemets
 											point_virgule
+												%fin
 											else
 												apostrophe
 													valeur_numerique
 														apostrophe
 															point_virgule
+																%fin
 												guillemets
 													valeur_numerique
 														guillemets
 															point_virgule
-												etiquette
+																%fin
+												etiquette_signal
 													point_virgule
-												etiquette
+														%fin
+												etiquette_signal
 													operator
-														etiquette
+														etiquette_signal
 															point_virgule
+																%fin
 												parenthese_ouverte	
-													etiquette
+													etiquette_signal
 														operator
-															etiquette
+															etiquette_signal
 																parenthese_fermee
 																	point_virgule
+																		%fin
 								apostrophe
 									valeur_numerique
 										apostrophe
 											point_virgule
+												%fin
 											else
 												apostrophe
 													valeur_numerique
 														apostrophe
 															point_virgule
+																%fin
 												guillemets
 													valeur_numerique
 														guillemets
 															point_virgule
-												etiquette
+																%fin
+												etiquette_signal
 													point_virgule
-												etiquette
+														%fin
+												etiquette_signal
 													operator
-														etiquette
+														etiquette_signal
 															point_virgule
+																%fin
 												parenthese_ouverte	
-													etiquette
+													etiquette_signal
 														operator
-															etiquette
+															etiquette_signal
 																parenthese_fermee
 																	point_virgule
-								etiquette	
+																		%fin
+								etiquette_signal	
 									point_virgule
+										%fin
 									else
 										apostrophe
 											valeur_numerique
 												apostrophe
 													point_virgule
+														%fin
 										guillemets
 											valeur_numerique
 												guillemets
 													point_virgule
-										etiquette
+														%fin
+										etiquette_signal
 											point_virgule
-										etiquette
+												%fin
+										etiquette_signal
 											operator
-												etiquette
+												etiquette_signal
 													point_virgule
+														%fin
 										parenthese_ouverte	
-											etiquette
+											etiquette_signal
 												operator
-													etiquette
+													etiquette_signal
 														parenthese_fermee
 															point_virgule
-								etiquette
+																%fin
 									operator
-										etiquette
+										etiquette_signal
 											point_virgule
+												%fin
 											else
 												apostrophe
 													valeur_numerique
 														apostrophe
 															point_virgule
+																%fin
 												guillemets
 													valeur_numerique
 														guillemets
 															point_virgule
-												etiquette
+																%fin
+												etiquette_signal
 													point_virgule
-												etiquette
+														%fin
+												etiquette_signal
 													operator
-														etiquette
+														etiquette_signal
 															point_virgule
-												parenthese_ouverte	
-													etiquette
+																%fin
+												parenthese_ouverte
+													etiquette_signal
 														operator
-															etiquette
+															etiquette_signal
 																parenthese_fermee
 																	point_virgule
+																		%fin

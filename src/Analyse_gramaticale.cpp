@@ -18,6 +18,7 @@ ref_tree library_tree("./ref_tree/library_use.tree");
 ref_tree use_tree("./ref_tree/use.tree");
 ref_tree entity_tree("./ref_tree/entity.tree");
 ref_tree architecture_tree("./ref_tree/architecture.tree");
+ref_tree concurent_tree("./ref_tree/concurent.tree");
 
 ref_tree declaration_port_tree("./ref_tree/declaration_port.tree");		
 ref_tree declaration_signal_tree("./ref_tree/declaration_signal.tree");
@@ -132,7 +133,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 		}
 		else{ //node courant ne correspond pas au lexem
 			while(node_courant != NULL){ //test si c'est un des frere ?
-				
+				cout<<"/!\\node courant dans while node!= NULL: "<< node_courant->get_value()<<endl;
 				while (node_courant->get_value() == "%fin"){
 						if( (node_precedant.top())->get_child() != NULL){
 							node_courant = (node_precedant.top())->get_child();
@@ -158,11 +159,11 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector){
 				else{
 					if (node_courant->get_bros() == NULL && node_courant->get_value() != "%fin"){
 						
-						//cout<<"/!\\node precedant.top dans if: "<< (node_precedant.top())->get_value()<<endl;
+						cout<<"/!\\node precedant.top dans if: "<< (node_precedant.top())->get_value()<<endl;
 						//cout<<"/!\\node precedant.top dans if bros: "<< ((node_precedant.top())->get_bros())->get_value()<<endl;
 						node_courant = (node_precedant.top())->get_bros();
 						node_precedant.pop();
-						cout<<"/!\\node precedant dans if: "<< node_courant->get_value()<<endl;
+						cout<<"/!\\node courant dans if: "<< node_courant->get_value()<<endl;
 					}
 					else{
 						node_courant = node_courant->get_bros();
@@ -213,6 +214,9 @@ node * lien_vers_sous_arbre(node* link){
 			else if ( link->get_value() == "assignement_signal.tree" ){
 			 link= assignement_signal_tree.get_root();
 			}
+			else if ( link->get_value() == "concurent.tree" ){
+			 link= (concurent_tree.get_root())->get_child();
+			}
 			else if ( link->get_value() == "case.tree" ){
 			 link= case_tree.get_root();
 			}
@@ -246,7 +250,7 @@ node * lien_vers_sous_arbre(node* link){
 			else if ( link->get_value() == "test_if_parenthese.tree" ){
 			 link= test_if_parenthese_tree.get_root();
 			}
-			else if ( link->get_value() == " when.tree" ){
+			else if ( link->get_value() == "when.tree" ){
 			 link= when_tree.get_root();
 			}
 			else if ( link->get_value() == "when_parenthese.tree" ){

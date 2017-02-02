@@ -7,9 +7,9 @@ process
 					end
 						process
 							point_virgule
-										process.tree
-											%fin
-										%fin
+								process.tree
+									%fin
+								%fin
 					affectation_signal.tree
 						affectation_variable.tree
 							end
@@ -35,9 +35,9 @@ process
 						end
 							process
 								point_virgule
-										process.tree
-											%fin
+									process.tree
 										%fin
+									%fin
 					affectation_variable.tree
 						if.tree
 							end
@@ -63,9 +63,9 @@ process
 						end
 							process
 								point_virgule
-										process.tree
-											%fin
+									process.tree
 										%fin
+									%fin
 					if.tree
 						affectation_variable.tree
 							end
@@ -91,9 +91,9 @@ process
 						end
 							process
 								point_virgule
-										process.tree
-											%fin
+									process.tree
 										%fin
+									%fin
 					case.tree
 						affectation_variable.tree
 							end
@@ -119,6 +119,6 @@ process
 						end
 							process
 								point_virgule
-										process
-											%fin
+									process.tree
 										%fin
+									%fin

@@ -20,7 +20,6 @@ begin
 --a_u<= unsigned(a);
 --b_u<= unsigned(b);
 
-
  process(rst)
 begin 
 	
@@ -49,7 +48,9 @@ if rst ='1' then
 	end if;
 	
 end process; 
-
+a_u <="00000000";
+	b_u <="00000000";
+	a_u <= "00000000";
 end Arc;
     
     
