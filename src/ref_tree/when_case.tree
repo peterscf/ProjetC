@@ -71,3 +71,29 @@ when
 											when_case.tree
 												%fin
 											%fin
+	others
+		assignement
+			etiquette
+				inferieur_ou_egal
+					apostrophe
+						valeur_numerique
+							apostrophe
+								point_virgule
+									%fin
+					guillemets
+						valeur_numerique
+							guillemets
+								point_virgule
+									%fin
+			etiquette_signal
+				inferieur_ou_egal
+					apostrophe
+						valeur_numerique
+							apostrophe
+								point_virgule
+									%fin
+					guillemets
+						valeur_numerique
+							guillemets
+								point_virgule
+									%fin

@@ -6,6 +6,6 @@ use
 					all
 						point_virgule
 							%fin
-					etiquette
-						point_virgule
-							%fin
+			all
+				point_virgule
+					%fin

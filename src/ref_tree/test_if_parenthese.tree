@@ -1,5 +1,5 @@
 parenthese_ouverte
-	if.tree
+	test_if.tree
 		parenthese_fermee
 			%fin
 		

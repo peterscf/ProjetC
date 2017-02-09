@@ -6,6 +6,8 @@ case
 						case
 							point_virgule
 								%fin
+							case.tree
+								%fin		
 	parenthese_ouverte
 		etiquette
 			parenthese_fermee
@@ -15,6 +17,8 @@ case
 								case
 									point_virgule
 										%fin
+									case.tree
+										%fin		
 		etiquette_signal
 			parenthese_fermee
 				is
@@ -22,4 +26,6 @@ case
 							end
 								case
 									point_virgule
+										%fin
+									case.tree
 										%fin		
