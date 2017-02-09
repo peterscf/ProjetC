@@ -16,6 +16,12 @@ end
 in%sens
 out%sens
 #########################
+#new_type
+#########################
+type%new_type
+array
+of
+#########################
 #type
 #########################
 std_logic%type

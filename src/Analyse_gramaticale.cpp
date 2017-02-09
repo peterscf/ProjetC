@@ -195,7 +195,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 					if(debug){cout<<"node comparaison : "<< node_courant->get_value()<<endl;}
 					///////////////////	
 					node_courant = node_courant->get_child();
-					//break;
+					break;
 					if (node_courant == NULL){
 							cout <<"erreur de syntaxe : "<<(*(*itr_lex)).get_nom()<<endl<< "ligne "<<(*(*itr_lex)).get_line_pos()<<endl;
 							exit(1);//kill programme
