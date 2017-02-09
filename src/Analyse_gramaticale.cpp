@@ -49,6 +49,10 @@ ref_tree test_if_parenthese_tree("./ref_tree/test_if_parenthese.tree");
 ref_tree when_tree("./ref_tree/when.tree");
 ref_tree when_parenthese_tree_txt("./ref_tree/when_parenthese.tree");
 ref_tree when_case_tree("./ref_tree/when_case.tree");
+ref_tree multiple_virgules_tree("./ref_tree/multiple_virgules.tree");
+ref_tree new_type_tree("./ref_tree/new_type.tree");
+
+
 
 stack<string> position_lex;
 
@@ -327,6 +331,14 @@ node * lien_vers_sous_arbre(node* link){
 			}
 			else if ( link->get_value() == "when_case.tree" ){
 			 link= when_case_tree.get_root();
+			 position_lex.push("signal");
+			}
+			else if ( link->get_value() == "new_type.tree" ){
+			 link= new_type_tree.get_root();
+			 position_lex.push("signal");
+			}
+			else if ( link->get_value() == "multiple_virgules.tree" ){
+			 link= multiple_virgules_tree.get_root();
 			 position_lex.push("signal");
 			}
 			else{
