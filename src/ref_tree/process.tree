@@ -10,6 +10,11 @@ process
 								process.tree
 									%fin
 								%fin
+							etiquette
+								point_virgule
+									process.tree
+										%fin
+									%fin
 					affectation_signal.tree
 						affectation_variable.tree
 							end
@@ -18,6 +23,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						if.tree
 							end
 								process
@@ -25,6 +35,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						case.tree
 							end
 								process
@@ -32,12 +47,22 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						end
 							process
 								point_virgule
 									process.tree
 										%fin
 									%fin
+								etiquette
+									point_virgule
+										process.tree
+											%fin
+										%fin
 					affectation_variable.tree
 						if.tree
 							end
@@ -46,6 +71,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						case.tree
 							end
 								process
@@ -53,6 +83,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						affectation_signal.tree
 							end
 								process
@@ -60,12 +95,22 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						end
 							process
 								point_virgule
 									process.tree
 										%fin
 									%fin
+								etiquette
+									point_virgule
+										process.tree
+											%fin
+										%fin
 					if.tree
 						affectation_variable.tree
 							end
@@ -74,6 +119,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						case.tree
 							end
 								process
@@ -81,6 +131,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						affectation_signal.tree
 							end
 								process
@@ -88,12 +143,22 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						end
 							process
 								point_virgule
 									process.tree
 										%fin
 									%fin
+								etiquette
+									point_virgule
+										process.tree
+											%fin
+										%fin
 					case.tree
 						affectation_variable.tree
 							end
@@ -102,6 +167,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						if.tree
 							end
 								process
@@ -109,6 +179,11 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						affectation_signal.tree
 							end
 								process
@@ -116,9 +191,224 @@ process
 										process.tree
 											%fin
 										%fin
+									etiquette
+										point_virgule
+											process.tree
+												%fin
+											%fin
 						end
 							process
 								point_virgule
 									process.tree
 										%fin
 									%fin
+								etiquette
+									point_virgule
+										process.tree
+											%fin
+										%fin
+	declaration_variable.tree
+	begin
+		end
+			process
+				point_virgule
+					process.tree
+						%fin
+					%fin
+				etiquette
+					point_virgule
+						process.tree
+							%fin
+						%fin
+		affectation_signal.tree
+			affectation_variable.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			if.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			case.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			end
+				process
+					point_virgule
+						process.tree
+							%fin
+						%fin
+					etiquette
+						point_virgule
+							process.tree
+								%fin
+							%fin
+		affectation_variable.tree
+			if.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			case.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			affectation_signal.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			end
+				process
+					point_virgule
+						process.tree
+							%fin
+						%fin
+					etiquette
+						point_virgule
+							process.tree
+								%fin
+							%fin
+		if.tree
+			affectation_variable.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			case.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			affectation_signal.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			end
+				process
+					point_virgule
+						process.tree
+							%fin
+						%fin
+					etiquette
+						point_virgule
+							process.tree
+								%fin
+							%fin
+		case.tree
+			affectation_variable.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			if.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			affectation_signal.tree
+				end
+					process
+						point_virgule
+							process.tree
+								%fin
+							%fin
+						etiquette
+							point_virgule
+								process.tree
+									%fin
+								%fin
+			end
+				process
+					point_virgule
+						process.tree
+							%fin
+						%fin
+					etiquette
+						point_virgule
+							process.tree
+								%fin
+							%fin

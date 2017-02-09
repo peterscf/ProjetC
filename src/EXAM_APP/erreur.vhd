@@ -1,7 +1,7 @@
 
-librar STD; --manque y
-  use STDtextio.all; --manque .
-libraryIEEE; --pas d'espace
+library STD; --manque y
+  use STD.textio.all; --manque .
+library IEEE; --pas d'espace
   use IEEE.bit_1164 .all; --un espace en trop
   use IEEE.bit_misc.all --pas de ;
   use IEEE.bit_arith.all;

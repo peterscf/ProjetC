@@ -8,19 +8,21 @@ nop
 			%fin
 		%fin
 	etiquette
-		port_map.tree
-			concurent.tree
-				%fin
-			%fin
 		assignement_signal.tree
 			concurent.tree
 				%fin
 			%fin
-		process.tree
-			concurent.tree
+		deux_points
+			process.tree
+				concurent.tree
+					%fin
 				%fin
-			%fin
+			port_map.tree
+				concurent.tree
+					%fin
+				%fin
 	when.tree
 			concurent.tree
 				%fin
 			%fin
+	%fin
