@@ -70,6 +70,13 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 		///////////////////
 		if(debug){(*(*itr_lex)).affiche_lexem();}
 		///////////////////
+		
+		//test si premier n'est pas etiquette !!!! erreur de stack
+		if((*(*itr_lex)).get_type()=="etiquette" && position_lex.empty() ){
+				cout <<"erreur de syntaxe : "<<(*(*itr_lex)).get_nom()<<endl<< "ligne "<<(*(*itr_lex)).get_line_pos()<<endl;
+							exit(1);//kill programme
+		}
+		
 		//test si etiquette existe deja !
 		if((*(*itr_lex)).get_type()=="etiquette" && position_lex.top() != "port" ){
 				//test si le lexem etiquette existe !
@@ -89,25 +96,25 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 		//traitement du pointeur quand il ya un lien dans l'arbre de ref
 		
 		
-		if((*(*itr_lex)).get_type() == "architecture"){
+		if((*(*itr_lex)).get_type() == "architecture" && (node_courant->get_value())=="%fin"){
 			//pointer sur architecture_tree
 			node_courant = architecture_tree.get_root();
 			node_precedant.push(node_courant);
 			position_lex.push("architecture");
 		}
-		else if((*(*itr_lex)).get_type() == "entity"){
+		else if((*(*itr_lex)).get_type() == "entity"&& (node_courant->get_value())=="%fin"){
 			//pointer sur entity_tree
 			node_courant = entity_tree.get_root();
 			node_precedant.push(node_courant);
 			position_lex.push("entity");
 		}
-		else if((*(*itr_lex)).get_type() == "use"){
+		else if((*(*itr_lex)).get_type() == "use"&& (node_courant->get_value())=="%fin"){
 			//pointer sur use_tree
 			node_courant = use_tree.get_root();
 			node_precedant.push(node_courant);
 			position_lex.push("use");
 		}
-		else if((*(*itr_lex)).get_type() == "library"){
+		else if((*(*itr_lex)).get_type() == "library" && (node_courant->get_value())=="%fin"){
 			//pointer sur library_tree
 			node_courant = library_tree.get_root();
 			node_precedant.push(node_courant);
@@ -143,7 +150,6 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 					if(debug){(*(*itr_lex)).affiche_lexem();}
 					///////////////////
 				}
-				
 				else{//sinon on renome les etiquette par leur position
 					(*(*itr_lex)).set_type("etiquette_"+(position_lex.top()));
 					///////////////////
@@ -170,6 +176,10 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 						///////////////////
 						if(debug){cout<<"/!\\node precedant dans while: "<< node_courant->get_value()<<endl;}
 						///////////////////
+						if (node_courant == NULL){ //tes
+							cout <<"erreur de syntaxe : "<<(*(*itr_lex)).get_nom()<<endl<< "ligne "<<(*(*itr_lex)).get_line_pos()<<endl;
+							exit(1);//kill programme
+						}
 				}
 				if((node_courant->get_value()).find(".")!=string::npos){
 					node_precedant.push(node_courant);
@@ -181,7 +191,11 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 					if(debug){cout<<"node comparaison : "<< node_courant->get_value()<<endl;}
 					///////////////////	
 					node_courant = node_courant->get_child();
-					break;
+					//break;
+					if (node_courant == NULL){
+							cout <<"erreur de syntaxe : "<<(*(*itr_lex)).get_nom()<<endl<< "ligne "<<(*(*itr_lex)).get_line_pos()<<endl;
+							exit(1);//kill programme
+						}
 				}
 				
 				
@@ -218,8 +232,6 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 ///////////////////////////////////////////////////////////////////////
 //lien vers sous arbre
 node * lien_vers_sous_arbre(node* link){
-
-
 
 
 			if(link->get_value() =="port.tree" ){
@@ -318,7 +330,7 @@ node * lien_vers_sous_arbre(node* link){
 			 position_lex.push("signal");
 			}
 			else{
-				link =NULL;
+				link = NULL;
 			}
 			return link;
 		}
