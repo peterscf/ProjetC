@@ -355,7 +355,7 @@ node * lien_vers_sous_arbre(node* link){
 			 position_lex.push("signal");
 			}
 			else if ( link->get_value() == "multiple_virgules.tree" ){
-			 link= multiple_virgules_tree.get_root();
+			 link= (multiple_virgules_tree.get_root())->get_child();
 			 position_lex.push("signal");
 			}
 			else{

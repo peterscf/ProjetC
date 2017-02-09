@@ -2,10 +2,17 @@ new_type
 	etiquette
 		is
 			parenthese_ouverte
-				multiple_virgules.tree
+				etiquette
 					parenthese_fermee
 						point_virgule
 							%fin
+					virgule
+						multiple_virgules.tree
+							parenthese_fermee
+								point_virgule
+									new_type.tree
+										%fin
+									%fin
 			array
 				parenthese_ouverte
 					valeur_numerique
@@ -15,25 +22,72 @@ new_type
 									of
 										type
 											point_virgule
+												new_type.tree
+													%fin
 												%fin
 										type_vector
 											point_virgule
+												new_type.tree
+													%fin
 												%fin
 										etiquette
 											point_virgule
-												%fin		
+												new_type.tree
+													%fin
+												%fin
 	type
 		is
 			parenthese_ouverte
-				multiple_virgules.tree
-					parenthese_fermee
-						point_virgule
-							%fin
+				apostrophe
+					etiquette
+						apostrophe
+							virgule
+								multiple_virgules.tree
+									parenthese_fermee
+										point_virgule
+											new_type.tree
+												%fin
+											%fin
+							parenthese_fermee
+								point_virgule
+									new_type.tree
+										%fin
+									%fin
+					valeur_numerique
+						apostrophe
+							virgule
+								multiple_virgules.tree
+									parenthese_fermee
+										point_virgule
+											new_type.tree
+												%fin
+											%fin
+							parenthese_fermee
+								point_virgule
+									new_type.tree
+										%fin
+									%fin
+					operator
+						apostrophe
+							virgule
+								multiple_virgules.tree
+									parenthese_fermee
+										point_virgule
+											new_type.tree
+												%fin
+											%fin
+							parenthese_fermee
+								point_virgule
+									new_type.tree
+										%fin
+									%fin
 	type_vector
 		is
 			parenthese_ouverte
 				multiple_virgules.tree
 					parenthese_fermee
 						point_virgule
+							new_type.tree
+								%fin
 							%fin
 	

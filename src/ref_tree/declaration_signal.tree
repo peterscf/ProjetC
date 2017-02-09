@@ -1,5 +1,5 @@
 type_signal
-	liste_de_sensib
+	etiquette
 		deux_points
 			type
 				point_virgule
@@ -12,6 +12,17 @@ type_signal
 						%fin
 					%fin
 		virgule
-			declaration_signal.tree
-				%fin
+			liste_de_sensib.tree
+				deux_points
+					type
+						point_virgule
+							declaration_signal.tree
+								%fin
+							%fin
+					type_vector.tree
+						point_virgule
+							declaration_signal.tree
+								%fin
+							%fin
+
 

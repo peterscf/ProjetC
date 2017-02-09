@@ -25,6 +25,40 @@ architecture
 									etiquette_architecture
 										point_virgule
 											%fin
+							new_type.tree
+								begin
+									concurent.tree
+										end
+											etiquette_architecture
+												point_virgule
+													%fin
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+						new_type.tree
+							begin
+								concurent.tree
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							component.tree
+								begin
+									concurent.tree
+										end
+											etiquette_architecture
+												point_virgule
+													%fin
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+							
 						begin
 							concurent.tree
 								end
@@ -47,6 +81,94 @@ architecture
 									etiquette_architecture
 										point_virgule
 											%fin
+							new_type.tree
+								begin
+									concurent.tree
+										end
+											etiquette_architecture
+												point_virgule
+													%fin
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+						new_type.tree
+							begin
+								concurent.tree
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							declaration_signal.tree
+								begin
+									concurent.tree
+										end
+											etiquette_architecture
+												point_virgule
+													%fin
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+						begin
+							concurent.tree
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							end
+								etiquette_architecture
+									point_virgule
+										%fin
+					new_type.tree
+						declaration_signal.tree
+							begin
+								concurent.tree
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							component.tree
+								begin
+									concurent.tree
+										end
+											etiquette_architecture
+												point_virgule
+													%fin
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+						component.tree
+							begin
+								concurent.tree
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
+								end
+									etiquette_architecture
+										point_virgule
+											%fin
+							declaration_signal.tree
+								begin
+									concurent.tree
+										end
+											etiquette_architecture
+												point_virgule
+													%fin
+									end
+										etiquette_architecture
+											point_virgule
+												%fin
 						begin
 							concurent.tree
 								end
