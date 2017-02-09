@@ -163,6 +163,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 			}
 			node_courant = node_courant->get_child();
 		}
+		
 		else{ //node courant ne correspond pas au lexem
 			while(node_courant != NULL){ //test si c'est un des frere ?
 				///////////////////
@@ -193,7 +194,23 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 				if ((*(*itr_lex)).get_type() == node_courant->get_value()){
 					///////////////////
 					if(debug){cout<<"node comparaison : "<< node_courant->get_value()<<endl;}
-					///////////////////	
+					///////////////////
+						if((*(*itr_lex)).get_type()=="etiquette" ){//etiquette 
+			
+							if (position_lex.top() == "port"){ //si on est dans port 
+								(*(*itr_lex)).set_type("etiquette_signal");
+								///////////////////
+								if(debug){(*(*itr_lex)).affiche_lexem();}
+								///////////////////
+							}
+							else{//sinon on renome les etiquette par leur position
+								(*(*itr_lex)).set_type("etiquette_"+(position_lex.top()));
+								///////////////////
+								if(debug){(*(*itr_lex)).affiche_lexem();}
+								///////////////////				
+							}
+						}
+					
 					node_courant = node_courant->get_child();
 					break;
 					if (node_courant == NULL){
