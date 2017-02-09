@@ -17,12 +17,12 @@ int main ()
 
 vector < lexem* > Lx ; //CREATION DU VECTEUR
 
-string file ="test_arbre_4_if.vhd";
+string file ="./EXAM_APP/erreur.vhd";
 
  
 		Lx = lexeur(file);//Lexeur
 		Analyse_lexical (Lx);
-		Analyse_gramaticale(Lx);
+		Analyse_gramaticale(Lx, true);
 
 
 
