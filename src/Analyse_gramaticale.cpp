@@ -96,25 +96,25 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 		//traitement du pointeur quand il ya un lien dans l'arbre de ref
 		
 		
-		if((*(*itr_lex)).get_type() == "architecture" && (node_courant->get_value())=="%fin"){
+		if((*(*itr_lex)).get_type() == "architecture" && position_lex.empty() ){
 			//pointer sur architecture_tree
 			node_courant = architecture_tree.get_root();
 			node_precedant.push(node_courant);
 			position_lex.push("architecture");
 		}
-		else if((*(*itr_lex)).get_type() == "entity"&& (node_courant->get_value())=="%fin"){
+		else if((*(*itr_lex)).get_type() == "entity" && position_lex.empty()){
 			//pointer sur entity_tree
 			node_courant = entity_tree.get_root();
 			node_precedant.push(node_courant);
 			position_lex.push("entity");
 		}
-		else if((*(*itr_lex)).get_type() == "use"&& (node_courant->get_value())=="%fin"){
+		else if((*(*itr_lex)).get_type() == "use" && position_lex.empty()){
 			//pointer sur use_tree
 			node_courant = use_tree.get_root();
 			node_precedant.push(node_courant);
 			position_lex.push("use");
 		}
-		else if((*(*itr_lex)).get_type() == "library" && (node_courant->get_value())=="%fin"){
+		else if((*(*itr_lex)).get_type() == "library" && position_lex.empty()){
 			//pointer sur library_tree
 			node_courant = library_tree.get_root();
 			node_precedant.push(node_courant);

@@ -17,7 +17,7 @@ int main ()
 
 vector < lexem* > Lx ; //CREATION DU VECTEUR
 
-string file ="./EXAM_APP/erreur.vhd";
+string file ="./EXAM_APP/proc.vhd";
 
  
 		Lx = lexeur(file);//Lexeur
