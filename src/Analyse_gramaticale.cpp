@@ -102,7 +102,7 @@ void Analyse_gramaticale(vector <lexem*> Lx_vector,bool debug){
 			node_precedant.push(node_courant);
 			position_lex.push("architecture");
 		}
-		else if((*(*itr_lex)).get_type() == "entity" && position_lex.empty()){
+		else if((*(*itr_lex)).get_type() == "entity" && (position_lex.empty() || position_lex.top() == "use") ){
 			//pointer sur entity_tree
 			node_courant = entity_tree.get_root();
 			node_precedant.push(node_courant);
